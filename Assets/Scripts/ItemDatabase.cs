@@ -35,8 +35,8 @@ public class ItemDatabase : MonoBehaviour
             {
                 { "cost", 0 },
                 {"weight", 10 }
-            }, 
-            10, 10)
+            },
+            100, 10.0D / 60, 100, 100, 1000, 1)
         };
     }
 }
