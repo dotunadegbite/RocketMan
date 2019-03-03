@@ -26,6 +26,15 @@ public class RocketController : MonoBehaviour
         {
             posX += 0.1;
         }
+
+        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        if (Random.Range(0, 4) == 0)
+        {
+            cube.transform.position = new Vector3(
+                transform.position.x + Random.RandomRange(0, 10) - 5,
+                transform.position.y * 1.05f + Random.Range(0, 10),
+                0);
+        }
     }
 
     void FixedUpdate()
