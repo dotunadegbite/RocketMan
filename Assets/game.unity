@@ -383,3 +383,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocket: {fileID: 534936654}
   smoothTime: 1
+  GameDuration: 100
+  cam: {fileID: 0}
