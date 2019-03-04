@@ -31,7 +31,7 @@ public class RocketController : MonoBehaviour
         if (Random.Range(0, 4) == 0)
         {
             cube.transform.position = new Vector3(
-                transform.position.x + Random.RandomRange(0, 10) - 5,
+                transform.position.x + Random.Range(0, 10) - 5,
                 transform.position.y * 1.05f + Random.Range(0, 10),
                 0);
         }
@@ -61,7 +61,7 @@ public class RocketController : MonoBehaviour
 
         double accelerationY = thrustForce / currentWeight +
                                getGravityAcceleration() * Time.deltaTime +
-                               getAirResistanceAcceleration() * Time.deltaTime;
+                               getAirResistanceAcceleration(velY) * Time.deltaTime;
 
         velY += accelerationY;
         posY += velY * Time.deltaTime;
@@ -80,8 +80,9 @@ public class RocketController : MonoBehaviour
         return -10;
     }
 
-    double getAirResistanceAcceleration()
+    double getAirResistanceAcceleration(double velocity)
     {
-        return 0; // TODO
+
+        return -0.01*velocity*velocity; // TODO
     }
 }
