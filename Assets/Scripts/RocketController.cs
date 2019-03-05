@@ -26,15 +26,6 @@ public class RocketController : MonoBehaviour
         {
             posX += 0.1;
         }
-
-        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        if (Random.Range(0, 4) == 0)
-        {
-            cube.transform.position = new Vector3(
-                transform.position.x + Random.Range(0, 10) - 5,
-                transform.position.y * 1.05f + Random.Range(0, 10),
-                0);
-        }
     }
 
     void FixedUpdate()
@@ -45,19 +36,21 @@ public class RocketController : MonoBehaviour
     }
 
     void updatePosition() {
-        double currentWeight = 0;
+        double currentWeight = 1;
         foreach(Stage stage in stages) {
             currentWeight += stage.getTotalWeight();
         }
 
-        Stage lastStage = stages[stages.Count - 1];
-        if (lastStage.isEmpty)
-        {
-            Debug.Log("stage empty");
-            return;
-        }
+        double thrustForce = 0;
+        if (stages.Count > 0) {
 
-        double thrustForce = lastStage.generateThrustForce();
+            Stage lastStage = stages[stages.Count - 1];
+            thrustForce = lastStage.generateThrustForce();
+            if (lastStage.isEmpty)
+            {
+                stages.RemoveAt(stages.Count - 1);
+            }
+        }
 
         double accelerationY = thrustForce / currentWeight +
                                getGravityAcceleration() * Time.deltaTime +
@@ -83,6 +76,6 @@ public class RocketController : MonoBehaviour
     double getAirResistanceAcceleration(double velocity)
     {
 
-        return -0.01*velocity*velocity; // TODO
+        return (velocity > 0 ? -1 : +1) * 0.001*velocity*velocity; // TODO
     }
 }
