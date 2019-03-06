@@ -344,11 +344,11 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: You have been hired by NASA to build the rocket to launch their first manned
-    mission to Mars. The lander and crew have a total weight of 4 metric tons. NASA
-    will be very, very disappointed if you don't succeed. You have received $50 million
-    up front, and will receive an additional $100 million when the spacecraft is safely
-    in orbit. Because it is very expensive to train astronauts, $5 million will be
-    deducted from your reward for every one who doesn't make it. Good luck.
+    mission to Mars. The lander and crew have a total weight of 4 metric tons. You
+    have received $50 million up front, and will receive an additional $100 million
+    when the spacecraft is safely in orbit. Because it is very expensive to train
+    astronauts, $5 million will be deducted from your reward for every one who doesn't
+    make it. NASA will be very, very disappointed if you don't succeed. Good luck.
 --- !u!222 &760419459
 CanvasRenderer:
   m_ObjectHideFlags: 0
