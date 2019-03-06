@@ -78,4 +78,9 @@ public class RocketController : MonoBehaviour
 
         return (velocity > 0 ? -1 : +1) * 0.001*velocity*velocity; // TODO
     }
+
+    public void updateComponent(Item item)
+    {
+
+    }
 }
