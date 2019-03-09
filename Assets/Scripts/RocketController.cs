@@ -8,12 +8,21 @@ public class RocketController : MonoBehaviour
     List<Stage> stages;
     double posX, posY, velX, velY, accX, accY;
     bool flying;
-    double targetHeight;
+    public double targetHeight;
+    double payLoad;
+    public double alititude;
+    public double velocity;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        //These should be set semi randomly, depending on gravity and mission
+        targetHeight = 120.0d; // in km
+        payLoad = 4000.0d; //In kg
+        //Let's do this metric
+
         Debug.Log("rocket starting");
         flying = false;
         stages = new List<Stage>();
@@ -58,7 +67,7 @@ public class RocketController : MonoBehaviour
     }
 
     void updatePosition() {
-        double currentWeight = 1;
+        double currentWeight = payLoad;
         foreach(Stage stage in stages) {
             currentWeight += stage.getTotalWeight();
         }
@@ -84,6 +93,8 @@ public class RocketController : MonoBehaviour
         Debug.Log(posY + " " + velY + " " + accelerationY);
 
         // wind
+        alititude = posY;
+        velocity = velY;
     }
 
     void addStage(Stage stage) {
