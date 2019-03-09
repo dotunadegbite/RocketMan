@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,6 @@ public class UpdateStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        statsText.text = "Speed: " + rocket.velocity + "\nAltitude: " + rocket.alititude;  
+        statsText.text = "Speed: " + Math.Round(rocket.velocity, 2)  + "km/h \nAltitude: " + Math.Round(rocket.alititude, 2)+"km ";  
     }
 }
