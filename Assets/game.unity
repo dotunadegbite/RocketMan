@@ -1117,7 +1117,7 @@ PrefabInstance:
     - target: {fileID: 4618485879812634075, guid: c365db748a10928449bef9569e42a606,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.00000013911736
+      value: 0.0000151980585
       objectReference: {fileID: 0}
     - target: {fileID: 4618485879812634075, guid: c365db748a10928449bef9569e42a606,
         type: 3}
@@ -1202,12 +1202,17 @@ PrefabInstance:
     - target: {fileID: 4618485880302939626, guid: c365db748a10928449bef9569e42a606,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000042671323
+      value: 0.00000877852
       objectReference: {fileID: 0}
     - target: {fileID: 4618485880302939626, guid: c365db748a10928449bef9569e42a606,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.000059484337
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618485880302939625, guid: c365db748a10928449bef9569e42a606,
+        type: 3}
+      propertyPath: itemList.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4618485880302939625, guid: c365db748a10928449bef9569e42a606,
         type: 3}
@@ -1219,6 +1224,38 @@ PrefabInstance:
       propertyPath: itemList.Array.data[0].description
       value: Intital Rocket
       objectReference: {fileID: 0}
+    - target: {fileID: 4618485880302939625, guid: c365db748a10928449bef9569e42a606,
+        type: 3}
+      propertyPath: itemList.Array.data[1].title
+      value: Second Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618485880302939625, guid: c365db748a10928449bef9569e42a606,
+        type: 3}
+      propertyPath: itemList.Array.data[1].description
+      value: Slightly Better Rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618485880302939625, guid: c365db748a10928449bef9569e42a606,
+        type: 3}
+      propertyPath: itemList.Array.data[1].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 476ea65e570fa4173b8744e1b753a555,
+        type: 3}
+    - target: {fileID: 4618485880302939625, guid: c365db748a10928449bef9569e42a606,
+        type: 3}
+      propertyPath: itemList.Array.data[2].title
+      value: Third Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618485880302939625, guid: c365db748a10928449bef9569e42a606,
+        type: 3}
+      propertyPath: itemList.Array.data[2].description
+      value: Even Better Rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618485880302939625, guid: c365db748a10928449bef9569e42a606,
+        type: 3}
+      propertyPath: itemList.Array.data[2].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 1f9a620410fcc4d8ab25ffd07006e4a2,
+        type: 3}
     - target: {fileID: 4618485881198571826, guid: c365db748a10928449bef9569e42a606,
         type: 3}
       propertyPath: m_AnchorMax.x
