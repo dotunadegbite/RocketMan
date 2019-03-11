@@ -8,12 +8,25 @@ public class RocketController : MonoBehaviour
     List<Stage> stages;
     double posX, posY, velX, velY, accX, accY;
     bool flying;
-    double targetHeight;
+    public double targetAltitude;
+    double payLoad;
+    public double alititude;
+    public double velocity;
+
+    public Text winText;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        winText.gameObject.SetActive(false);
+
+        //These should be set semi randomly, depending on gravity and mission
+        targetAltitude = 120.0d; // in km
+        payLoad = 4000.0d; //In kg
+        //Let's do this metric
+
         Debug.Log("rocket starting");
         flying = false;
         stages = new List<Stage>();
@@ -40,7 +53,7 @@ public class RocketController : MonoBehaviour
     void startRocket()
     {
         flying = true;
-        targetHeight = 100;
+        targetAltitude = 100;
     }
 
     void FixedUpdate()
@@ -50,15 +63,17 @@ public class RocketController : MonoBehaviour
         {
             updatePosition();
             this.transform.position = Vector3.up * (float)posY + Vector3.right * (float)posX;
-            if(this.posY > targetHeight)
+            if (isAltitudeIsReached(alititude))
             {
                 flying = false;
+                winText.gameObject.SetActive(true);
+
             }
         }
     }
 
     void updatePosition() {
-        double currentWeight = 1;
+        double currentWeight = payLoad;
         foreach(Stage stage in stages) {
             currentWeight += stage.getTotalWeight();
         }
@@ -84,6 +99,8 @@ public class RocketController : MonoBehaviour
         Debug.Log(posY + " " + velY + " " + accelerationY);
 
         // wind
+        alititude = posY;
+        velocity = velY;
     }
 
     void addStage(Stage stage) {
@@ -104,5 +121,10 @@ public class RocketController : MonoBehaviour
     public void updateComponent(Item item)
     {
 
+    }
+
+    bool isAltitudeIsReached(double currentAltitude)
+    {
+        return currentAltitude >= targetAltitude;
     }
 }
