@@ -7,11 +7,11 @@ using UnityEngine.UI;
 public class UpdateStats : MonoBehaviour
 {
     public Text statsText;
-    RocketController rocket;
+    public RocketController rocket;
     // Start is called before the first frame update
     void Start()
     {
-        rocket = FindObjectOfType<RocketController>();
+        //rocket = FindObjectOfType<RocketController>();
     }
 
     // Update is called once per frame

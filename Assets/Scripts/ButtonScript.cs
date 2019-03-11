@@ -34,6 +34,7 @@ public class ButtonScript : MonoBehaviour, IPointerEnterHandler
         scrollList.TryTransferItemToOtherShop(this.item);
         if (this.popupCreated)
             Destroy(this.instantiatedPopup);
+        Debug.Log(this.popupCreated);
 
     }
     // Start is called before the first frame update
