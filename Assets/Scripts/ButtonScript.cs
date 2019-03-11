@@ -34,6 +34,7 @@ public class ButtonScript : MonoBehaviour, IPointerEnterHandler
         scrollList.TryTransferItemToOtherShop(this.item);
         if (this.popupCreated)
             Destroy(this.instantiatedPopup);
+        popupCreated = false;
         Debug.Log(this.popupCreated);
 
     }
@@ -45,13 +46,21 @@ public class ButtonScript : MonoBehaviour, IPointerEnterHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        this.instantiatedPopup = Instantiate(popupPrefab, this.popupSpawn.transform);
-        this.popupCreated = true;
+        if (!this.popupCreated)
+        {
+            this.instantiatedPopup = Instantiate(popupPrefab, this.popupSpawn.transform);
+            this.popupCreated = true;
 
-        ItemPopup itemInfo = this.instantiatedPopup.GetComponent<ItemPopup>();
-        this.itemInfo = itemInfo;
-        itemInfo.description.text = this.item.description;
-        itemInfo.item = this.item;
+            ItemPopup itemInfo = this.instantiatedPopup.GetComponent<ItemPopup>();
+            this.itemInfo = itemInfo;
+            itemInfo.description.text = this.item.description;
+            itemInfo.item = this.item;
+
+            if (!this.item.beenPurchased)
+            {
+                itemInfo.equipButton.interactable = false;
+            }
+        }
     }
 
 }
