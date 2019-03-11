@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class RocketController : MonoBehaviour
 {
     List<Stage> stages;
-    double posX, posY, velX, velY, accX, accY;
+    public double posX, posY, velX, velY, accX, accY;
     bool flying;
     public double targetAltitude;
     double payLoad;
-    public double alititude;
-    public double velocity;
+    public double altitude, velocity;
+    
 
     public Text winText;
 
@@ -23,8 +23,8 @@ public class RocketController : MonoBehaviour
         winText.gameObject.SetActive(false);
 
         //These should be set semi randomly, depending on gravity and mission
-        targetAltitude = 120.0d; // in km
-        payLoad = 4000.0d; //In kg
+        targetAltitude = 2000.0d; // in km
+        payLoad = 10.0d; //In kg
         //Let's do this metric
 
         Debug.Log("rocket starting");
@@ -53,7 +53,6 @@ public class RocketController : MonoBehaviour
     void startRocket()
     {
         flying = true;
-        targetAltitude = 100;
     }
 
     void FixedUpdate()
@@ -63,7 +62,7 @@ public class RocketController : MonoBehaviour
         {
             updatePosition();
             this.transform.position = Vector3.up * (float)posY + Vector3.right * (float)posX;
-            if (isAltitudeIsReached(alititude))
+            if (isAltitudeIsReached())
             {
                 flying = false;
                 winText.gameObject.SetActive(true);
@@ -99,7 +98,7 @@ public class RocketController : MonoBehaviour
         Debug.Log(posY + " " + velY + " " + accelerationY);
 
         // wind
-        alititude = posY;
+        altitude = posY;
         velocity = velY;
     }
 
@@ -123,8 +122,8 @@ public class RocketController : MonoBehaviour
 
     }
 
-    bool isAltitudeIsReached(double currentAltitude)
+    bool isAltitudeIsReached()
     {
-        return currentAltitude >= targetAltitude;
+        return altitude >= targetAltitude;
     }
 }

@@ -17,6 +17,6 @@ public class UpdateStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        statsText.text = "Speed: " + Math.Round(rocket.velocity, 2)  + "km/h \nAltitude: " + Math.Round(rocket.alititude, 2)+"km ";  
+        statsText.text = "Speed: " + Math.Round(rocket.velocity, 2)  + "km/h \nAltitude: " + Math.Round(rocket.altitude, 2)+"km ";  
     }
 }
