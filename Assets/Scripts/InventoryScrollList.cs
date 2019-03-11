@@ -12,6 +12,8 @@ public class InventoryScrollList : MonoBehaviour
     public SimpleObjectPool objectPool;
     public Transform popupSpawn;
 
+    private ItemDatabase db = new ItemDatabase();
+
     public void TryTransferItemToOtherShop(Item item)
     {
         if (!item.beenPurchased)
