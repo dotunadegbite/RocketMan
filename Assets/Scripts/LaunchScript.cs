@@ -9,6 +9,7 @@ public class LaunchScript : MonoBehaviour
     void Start()
     {
         rocket = FindObjectOfType<RocketController>();
+        //this.GetComponent<>
     }
 
     public void onClickLaunch() 

@@ -11,7 +11,8 @@ public class RocketController : MonoBehaviour
     public double targetAltitude;
     double payLoad;
     public double altitude, velocity;
-    
+
+    public Canvas inventoryCanvas;
 
     public Text winText;
 
@@ -20,6 +21,7 @@ public class RocketController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         winText.gameObject.SetActive(false);
 
         //These should be set semi randomly, depending on gravity and mission
@@ -54,6 +56,7 @@ public class RocketController : MonoBehaviour
     public void startRocket()
     {
         flying = true;
+        inventoryCanvas.gameObject.SetActive(false);
     }
 
     void FixedUpdate()

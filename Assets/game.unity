@@ -379,6 +379,7 @@ MonoBehaviour:
   targetAltitude: 0
   altitude: 0
   velocity: 0
+  inventoryCanvas: {fileID: 1608356289}
   winText: {fileID: 55988271}
 --- !u!136 &534936656
 CapsuleCollider:
@@ -978,6 +979,12 @@ MonoBehaviour:
   smoothTime: 1
   GameDuration: 10
   cam: {fileID: 0}
+--- !u!223 &1608356289 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 4618485879551437917, guid: c365db748a10928449bef9569e42a606,
+    type: 3}
+  m_PrefabInstance: {fileID: 1959094090}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1959094090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1123,7 +1130,7 @@ PrefabInstance:
     - target: {fileID: 4618485879812634075, guid: c365db748a10928449bef9569e42a606,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000028727152
+      value: -0.000059339436
       objectReference: {fileID: 0}
     - target: {fileID: 4618485879812634072, guid: c365db748a10928449bef9569e42a606,
         type: 3}
@@ -1208,7 +1215,7 @@ PrefabInstance:
     - target: {fileID: 4618485880302939626, guid: c365db748a10928449bef9569e42a606,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000038403305
+      value: -0.00006901559
       objectReference: {fileID: 0}
     - target: {fileID: 4618485880302939625, guid: c365db748a10928449bef9569e42a606,
         type: 3}
