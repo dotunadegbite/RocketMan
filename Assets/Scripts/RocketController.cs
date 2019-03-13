@@ -44,13 +44,14 @@ public class RocketController : MonoBehaviour
         {
             posX += 0.1;
         }
+        /*
         else if (Input.GetKey(KeyCode.Space))
         {
             startRocket();
-        }
+        }*/
     }
 
-    void startRocket()
+    public void startRocket()
     {
         flying = true;
     }
