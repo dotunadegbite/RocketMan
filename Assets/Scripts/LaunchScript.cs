@@ -15,6 +15,7 @@ public class LaunchScript : MonoBehaviour
     {
 
         rocket.startRocket();
+        this.gameObject.SetActive(false);
 
     }
 
