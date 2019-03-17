@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FuelType : Item 
+public class FuelType : Item
 {
-    public int safetyLevel;
+    public int acceleration;
+    public int weight;
+    public int volatility;
 
-    public FuelType(int id, string title, string description, Sprite icon, Dictionary<string, int> stats, int safetyLevel) : base(id, title, description, icon, stats)
+    public FuelType(int id, string title, string description, Sprite icon, Dictionary<string, int> stats) : base(id, title, description, icon, stats)
     {
-        this.safetyLevel = safetyLevel;
+        this.acceleration = stats["acceleration"];
+        this.weight = stats["weight"];
+        this.volatility = stats["volatility"];
     }
 }

@@ -4,21 +4,11 @@ using UnityEngine;
 
 public class FuelTank : Item
 {
-    public int safetyLevel;
+    public int safety;
+    public int weight;
 
-    // Start is called before the first frame update
-    public FuelTank(int id, string title, string description, Sprite icon, Dictionary<string, int> stats, int safetyLevel) :base(id, title, description, icon, stats){
-        this.safetyLevel = safetyLevel;
-    }
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public FuelTank(int id, string title, string description, Sprite icon, Dictionary<string, int> stats) :base(id, title, description, icon, stats){
+        this.safety = stats["safety"];
+        this.weight = stats["weight"];
     }
 }
