@@ -11,12 +11,16 @@ public class UpdateStats : MonoBehaviour
     public TMP_Text velocityText, currentAltitudeText, gravityText, payloadText, 
         targetAltitudeText, fuelTypeText, fuelTankText, stagesText, weightText, costText;
 
+    public Image itemIcon1, itemIcon2, itemIcon3;
+
     public RocketController rocket;
+
+    private ItemDatabase db;
     // Start is called before the first frame update
     void Start()
     {
         //rocket = FindObjectOfType<RocketController>();
-
+        this.db = GetComponent<ItemDatabase>();
     }
 
     // Update is called once per frame
@@ -33,5 +37,29 @@ public class UpdateStats : MonoBehaviour
         this.payloadText.text = "Payload Weight: " + this.rocket.getPayload() + "kg";
         this.targetAltitudeText.text = "Target Altitude " + this.rocket.getTargetAltitude() + "m";
 
+    }
+
+    public void LoadStoreItems(int itemType)
+    {
+        
+        if(itemType == 0)
+        {
+            Debug.Log(itemType);
+            this.itemIcon1.sprite = this.db.fuelTypes[0].icon;
+            this.itemIcon2.sprite = this.db.fuelTypes[1].icon;
+            this.itemIcon3.sprite = this.db.fuelTypes[2].icon;
+        }
+        else if (itemType == 1)
+        {
+            this.itemIcon1.sprite = this.db.fuelTanks[0].icon;
+            this.itemIcon2.sprite = this.db.fuelTanks[1].icon;
+            this.itemIcon3.sprite = this.db.fuelTanks[2].icon;
+        }
+        else if (itemType == 2)
+        {
+            this.itemIcon1.sprite = this.db.rocketConfigurations[0].icon;
+            this.itemIcon2.sprite = this.db.rocketConfigurations[1].icon;
+            this.itemIcon3.sprite = this.db.rocketConfigurations[2].icon;
+        }
     }
 }
