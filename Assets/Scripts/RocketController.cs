@@ -129,27 +129,31 @@ public class RocketController : MonoBehaviour
         return altitude >= targetAltitude;
     }
 
-    void setFuelType(FuelType fuelType)
+    public void setFuelType(FuelType fuelType)
     {
-        
+        foreach(Stage stage in stages)
+        {
+            //stage.fuelWeightPerUnit = fuelType.weight;
+            //stage.
+        }
     }
 
-    double getVelocity()
+    public double getVelocity()
     {
         return velY;
     }
 
-    double getAltitude()
+    public double getAltitude()
     {
         return posY;
     }
 
-    double getGravity()
+    public double getGravity()
     {
         return gravity;
     }
 
-    double getWeight()
+    public double getWeight()
     {
         double currentWeight = payLoad;
         foreach (Stage stage in stages)
@@ -160,12 +164,12 @@ public class RocketController : MonoBehaviour
     }
 
 
-    double getTargetAltitude()
+    public double getTargetAltitude()
     {
         return targetAltitude;
     }
 
-    double getPayload()
+    public double getPayload()
     {
         return payLoad;
     }
