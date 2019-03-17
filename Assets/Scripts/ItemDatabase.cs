@@ -57,11 +57,11 @@ public class ItemDatabase : MonoBehaviour
 
         this.rocketConfigurations = new List<RocketConfiguration>()
         {
-            new RocketConfiguration(7, "One Stage Rocket", "Only has one stage.", "fuelOne",
+            new RocketConfiguration(7, "One Stage Rocket", "Only has one stage.", "stageOne",
                                     new Dictionary<string, int>{{"numStages",1},{"cost", 100}},  new List<double>(){100},  new List<double>(){100},  new List<double>(){0.2}),
-            new RocketConfiguration(8, "Two Stage Rocket", "Has a second stage but is more expensive.", "fuelTwo",
+            new RocketConfiguration(8, "Two Stage Rocket", "Has a second stage but is more expensive.", "stageTwo",
                                     new Dictionary<string, int>{{"numStages",2},{"cost", 200 }}, new List<double>(){100,100},  new List<double>(){100,200},  new List<double>(){0.2,0.2}),
-            new RocketConfiguration(9, "Three Stage Rocket", "Most tages, most expensive.", "fuelThree",
+            new RocketConfiguration(9, "Three Stage Rocket", "Most tages, most expensive.", "stageThree",
                          new Dictionary<string, int>{{"numStages",3}, {"cost", 300 }},  new List<double>(){100,100,100},  new List<double>(){100,200,300},  new List<double>(){0.2,0.2,0.2})
         };
 

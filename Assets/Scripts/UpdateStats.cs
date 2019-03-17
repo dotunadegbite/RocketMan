@@ -16,11 +16,20 @@ public class UpdateStats : MonoBehaviour
     public RocketController rocket;
 
     private ItemDatabase db;
+
+    private StoreItem item1, item2, item3;
     // Start is called before the first frame update
     void Start()
     {
         //rocket = FindObjectOfType<RocketController>();
         this.db = GetComponent<ItemDatabase>();
+        this.itemIcon1.enabled = false;
+        this.itemIcon2.enabled = false;
+        this.itemIcon3.enabled = false;
+
+        this.item1 = this.itemIcon1.GetComponent<StoreItem>();
+        this.item2 = this.itemIcon2.GetComponent<StoreItem>();
+        this.item3 = this.itemIcon3.GetComponent<StoreItem>(); 
     }
 
     // Update is called once per frame
@@ -41,25 +50,49 @@ public class UpdateStats : MonoBehaviour
 
     public void LoadStoreItems(int itemType)
     {
-        
-        if(itemType == 0)
+
+
+        if (itemType == 0)
         {
-            Debug.Log(itemType);
             this.itemIcon1.sprite = this.db.fuelTypes[0].icon;
+            this.item1.Setup(this.db.fuelTypes[0]);
+
             this.itemIcon2.sprite = this.db.fuelTypes[1].icon;
+            this.item2.Setup(this.db.fuelTypes[1]);
+
             this.itemIcon3.sprite = this.db.fuelTypes[2].icon;
+            this.item3.Setup(this.db.fuelTypes[2]);
         }
         else if (itemType == 1)
         {
             this.itemIcon1.sprite = this.db.fuelTanks[0].icon;
+            this.item1.Setup(this.db.fuelTanks[0]);
+
             this.itemIcon2.sprite = this.db.fuelTanks[1].icon;
+            this.item2.Setup(this.db.fuelTanks[1]);
+
             this.itemIcon3.sprite = this.db.fuelTanks[2].icon;
+            this.item3.Setup(this.db.fuelTanks[2]);
         }
         else if (itemType == 2)
         {
             this.itemIcon1.sprite = this.db.rocketConfigurations[0].icon;
+            this.item1.Setup(this.db.rocketConfigurations[0]);
+
             this.itemIcon2.sprite = this.db.rocketConfigurations[1].icon;
+            this.item2.Setup(this.db.rocketConfigurations[1]);
+
             this.itemIcon3.sprite = this.db.rocketConfigurations[2].icon;
+            this.item3.Setup(this.db.rocketConfigurations[2]);
         }
+
+        this.itemIcon1.enabled = true;
+        this.itemIcon2.enabled = true;
+        this.itemIcon3.enabled = true;
+    }
+
+    public void DisplayItemStats(Item item)
+    {
+
     }
 }
