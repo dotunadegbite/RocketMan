@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemDatabase : MonoBehaviour
 {
-    List<Item> items = new List<Item>();
+    private List<Item> items = new List<Item>();
     public List<FuelTank> fuelTanks = new List<FuelTank>();
     public List<FuelType> fuelTypes = new List<FuelType>();
     public List<RocketConfiguration> rocketConfigurations = new List<RocketConfiguration>();
