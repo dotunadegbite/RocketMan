@@ -17,7 +17,9 @@ public class RocketController : MonoBehaviour
 
     public Text winText;
 
-
+    FuelType currentFuelType;
+    FuelTank currentFuelTank;
+    RocketConfiguration currentRocketConfiguration;
 
     // Start is called before the first frame update
     void Start()
@@ -133,10 +135,37 @@ public class RocketController : MonoBehaviour
     {
         foreach(Stage stage in stages)
         {
-            //stage.fuelWeightPerUnit = fuelType.weight;
-            //stage.
+            stage.fuelWeightPerUnit = fuelType.weight;
+            stage.fuelAcceleration = fuelType.acceleration;
         }
+        currentFuelType = fuelType;
     }
+
+    public void setFuelTank(FuelTank tank)
+    {
+        foreach (Stage stage in stages)
+        {
+            stage.tankWeight = tank.weight;
+        }
+        currentFuelTank = tank;
+    }
+
+    public void setRocketConfiguration(RocketConfiguration config)
+    {
+        currentRocketConfiguration = config;
+        stages.Clear();
+        for(int stage = 0; stage < config.numStages; stage++)
+        {
+            stages.Add(new Stage(
+                0, "", "", null, null,
+                config.fuelCapacities[stage], config.burnRates[stage], config.fuelCapacities[stage],
+                config.weights[stage],
+                0, 0));
+        }
+        setFuelTank(currentFuelTank);
+        setFuelType(currentFuelType);
+    }
+
 
     public double getVelocity()
     {
@@ -172,5 +201,20 @@ public class RocketController : MonoBehaviour
     public double getPayload()
     {
         return payLoad;
+    }
+
+    public FuelTank getCurrentFuelTank()
+    {
+        return currentFuelTank;
+    }
+
+    public FuelType getCurrentFuelType()
+    {
+        return currentFuelType;
+    }
+
+    public RocketConfiguration getCurrentRocketConfiguration()
+    {
+        return currentRocketConfiguration;
     }
 }

@@ -7,7 +7,7 @@ public class Stage : Item
 {
     public double fuelCapacity;
     public double burnRate;
-    public double fuelRemaining, baseWeight, fuelAcceleration, fuelWeightPerUnit;
+    public double fuelRemaining, baseWeight, fuelAcceleration, fuelWeightPerUnit, tankWeight;
     public bool isEmpty;
 
     public Stage(
@@ -22,6 +22,7 @@ public class Stage : Item
         this.fuelAcceleration = fuelAcceleration;
         this.fuelWeightPerUnit = fuelWeightPerUnit;
         this.isEmpty = false;
+        this.tankWeight = 0;
     }
 
     public Stage(Stage other) : base(other)
@@ -37,7 +38,7 @@ public class Stage : Item
 
     public double getTotalWeight()
     {
-        return baseWeight + fuelRemaining * fuelWeightPerUnit;
+        return baseWeight + tankWeight + fuelRemaining * fuelWeightPerUnit;
     }
 
     public double generateThrustForce()
