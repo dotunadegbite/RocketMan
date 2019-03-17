@@ -59,7 +59,6 @@ public class RocketController : MonoBehaviour
     public void startRocket()
     {
         flying = true;
-        inventoryCanvas.gameObject.SetActive(false);
     }
 
     void FixedUpdate()
