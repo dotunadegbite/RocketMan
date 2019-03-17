@@ -9,7 +9,7 @@ public class RocketConfiguration : Item
     public List<double> fuelCapacities;
     public List<double> burnRates;
 
-    public RocketConfiguration(int id, string title, string description, string iconName, Dictionary<string, int> stats, List<double> weights, List<double> fuelCapacities, List<double> burnRates) : base(id, title, description, icon, stats)
+    public RocketConfiguration(int id, string title, string description, string iconName, Dictionary<string, int> stats, List<double> weights, List<double> fuelCapacities, List<double> burnRates) : base(id, title, description, iconName, stats)
     {
         this.numStages = stats["numStages"];
         this.weights = weights;

@@ -11,7 +11,7 @@ public class Stage : Item
     public bool isEmpty;
 
     public Stage(
-        int id, string title, string description, Sprite icon, Dictionary<string, int> stats,
+        int id, string title, string description, string icon, Dictionary<string, int> stats,
         double fuelCapacity, double burnRate, double fuelRemaining, double baseWeight, double fuelAcceleration, double fuelWeightPerUnit) :
         base(id, title, description, icon, stats)
     {

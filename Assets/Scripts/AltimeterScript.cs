@@ -7,6 +7,7 @@ public class AltimeterScript : MonoBehaviour
 
     public float xCoord, yCoord;
     private double targetAltitude, currentAltitude;
+    public Texture backgroundTexture, fillTexture;
     RocketController rocket;
 
     private void Start()
@@ -22,7 +23,8 @@ public class AltimeterScript : MonoBehaviour
 
         // Draw a box in the new coordinate space defined by the BeginGroup.
         // Notice how (0,0) has now been moved on-screen
-        GUI.Box(new Rect(0, 0, 800, 600), "This box is now centered! - here you would put your main menu");
+        GUI.Box(new Rect(250, 0, 50, 300), backgroundTexture);
+        GUI.Box(new Rect(250, (float)(300 * (targetAltitude - currentAltitude) / targetAltitude), 50, 300- (float)(300 * (targetAltitude - currentAltitude) / targetAltitude)), fillTexture);
 
         // We need to match all BeginGroup calls with an EndGroup
         GUI.EndGroup();
