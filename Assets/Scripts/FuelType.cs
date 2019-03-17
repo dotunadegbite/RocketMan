@@ -8,7 +8,8 @@ public class FuelType : Item
     public int weight;
     public int volatility;
 
-    public FuelType(int id, string title, string description, string icon, Dictionary<string, int> stats) : base(id, title, description, icon, stats)
+
+    public FuelType(int id, string title, string description, string iconName, Dictionary<string, int> stats) : base(id, title, description, iconName, stats)
     {
         this.acceleration = stats["acceleration"];
         this.weight = stats["weight"];

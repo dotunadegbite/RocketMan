@@ -5,15 +5,15 @@ using UnityEngine;
 public class RocketConfiguration : Item
 {
     public int numStages;
-    public int weights;
-    public int fuelCapacity;
-    public int burnRates;
+    public List<double> weights;
+    public List<double> fuelCapacities;
+    public List<double> burnRates;
 
-    public RocketConfiguration(int id, string title, string description, string icon, Dictionary<string, int> stats) : base(id, title, description, icon, stats)
+    public RocketConfiguration(int id, string title, string description, string iconName, Dictionary<string, int> stats, List<double> weights, List<double> fuelCapacities, List<double> burnRates) : base(id, title, description, iconName, stats)
     {
         this.numStages = stats["numStages"];
-        this.weights = stats["weights"];
-        this.fuelCapacity = stats["fuelCapacity"];
-        this.burnRates = stats["burnRates"];
+        this.weights = weights;
+        this.fuelCapacities = fuelCapacities;
+        this.burnRates = burnRates;
     }
 }
