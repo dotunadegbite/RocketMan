@@ -11,6 +11,7 @@ public class RocketController : MonoBehaviour
     public double targetAltitude;
     double payLoad;
     public double altitude, velocity;
+    public double gravity = 9.8;
 
     public Canvas inventoryCanvas;
 
@@ -76,10 +77,7 @@ public class RocketController : MonoBehaviour
     }
 
     void updatePosition() {
-        double currentWeight = payLoad;
-        foreach(Stage stage in stages) {
-            currentWeight += stage.getTotalWeight();
-        }
+        double currentWeight = getWeight();
 
         double thrustForce = 0;
         if (stages.Count > 0) {
@@ -112,7 +110,7 @@ public class RocketController : MonoBehaviour
 
     double getGravityAcceleration()
     {
-        return -10;
+        return -gravity;
     }
 
     double getAirResistanceAcceleration(double velocity)
@@ -129,5 +127,50 @@ public class RocketController : MonoBehaviour
     bool isAltitudeIsReached()
     {
         return altitude >= targetAltitude;
+    }
+
+    public void setFuelType(FuelType fuelType)
+    {
+        foreach(Stage stage in stages)
+        {
+            //stage.fuelWeightPerUnit = fuelType.weight;
+            //stage.
+        }
+    }
+
+    public double getVelocity()
+    {
+        return velY;
+    }
+
+    public double getAltitude()
+    {
+        return posY;
+    }
+
+    public double getGravity()
+    {
+        return gravity;
+    }
+
+    public double getWeight()
+    {
+        double currentWeight = payLoad;
+        foreach (Stage stage in stages)
+        {
+            currentWeight += stage.getTotalWeight();
+        }
+        return currentWeight;
+    }
+
+
+    public double getTargetAltitude()
+    {
+        return targetAltitude;
+    }
+
+    public double getPayload()
+    {
+        return payLoad;
     }
 }
