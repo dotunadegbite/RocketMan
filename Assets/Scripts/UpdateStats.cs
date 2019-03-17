@@ -9,14 +9,20 @@ public class UpdateStats : MonoBehaviour
 {
     // TMP_Text statsText;
     public TMP_Text velocityText, currentAltitudeText, gravityText, payloadText, 
-        targetAltitudeText, fuelTypeText, fuelTankText, stagesText, weightText, costText;
+        targetAltitudeText, fuelTypeText, fuelTankText, stagesText, weightText, costText, currentMoney;
 
     public RocketController rocket;
+
+
+    public bool hasWon;
+
+    public Wallet wallet;
+
     // Start is called before the first frame update
     void Start()
     {
         //rocket = FindObjectOfType<RocketController>();
-
+        hasWon = false;
     }
 
     // Update is called once per frame
@@ -32,6 +38,8 @@ public class UpdateStats : MonoBehaviour
         this.gravityText.text = "Current Gravity: " + this.rocket.getGravity() + "m/s";
         this.payloadText.text = "Payload Weight: " + this.rocket.getPayload() + "kg";
         this.targetAltitudeText.text = "Target Altitude " + this.rocket.getTargetAltitude() + "m";
+        this.currentMoney.text = "Cash balance: $" + wallet.getCash();
 
     }
+
 }

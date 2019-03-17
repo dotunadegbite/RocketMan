@@ -13,7 +13,9 @@ public class RocketController : MonoBehaviour
     public double altitude, velocity;
     public double gravity = 9.8;
 
-    public Canvas inventoryCanvas;
+    public GameObject completionPanel;
+
+    public UpdateStats updateStats;
 
     public Text winText;
 
@@ -24,7 +26,7 @@ public class RocketController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        updateStats = FindObjectOfType<UpdateStats>();
         winText.gameObject.SetActive(false);
 
         //These should be set semi randomly, depending on gravity and mission
@@ -70,12 +72,29 @@ public class RocketController : MonoBehaviour
             this.transform.position = Vector3.up * (float)posY + Vector3.right * (float)posX;
             if (isAltitudeIsReached())
             {
-                flying = false;
-                winText.gameObject.SetActive(true);
+                hasWon();
 
             }
         }
+        if(velocity<0)
+        {
+            hasLost();
+        }
     }
+
+    void hasWon()
+    {
+        updateStats.hasWon = true;
+        flying = false;
+        completionPanel.gameObject.SetActive(true);
+    }
+
+    void hasLost()
+    {
+        flying = false;
+        completionPanel.gameObject.SetActive(true);
+    }
+
 
     void updatePosition() {
         double currentWeight = getWeight();
