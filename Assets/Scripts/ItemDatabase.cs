@@ -4,96 +4,65 @@ using UnityEngine;
 
 public class ItemDatabase : MonoBehaviour
 {
-    public List<Item> items = new List<Item>();
+    public List<FuelTank> fuelTanks = new List<FuelTank>();
+    public List<FuelType> fuelTypes = new List<FuelType>();
+    public List<RocketConfiguration> rocketConfigurations = new List<RocketConfiguration>();
 
     public Item GetItem(int id)
     {
         return this.items.Find(item => item.id == id);
     }
+
+
     private void Awake()
     {
         this.BuildDatabase();
     }
-    // Start is called before the first frame update
+
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         
     }
 
+
     private void BuildDatabase()
     {
-        this.items = new List<Item>()
+        this.fuelTanks = new List<FuelTank>()
         {
-            new Stage(0, "First Stage", "Initial rocket", null,
-            new Dictionary<string, int>()
-            {
-                { "cost", 0 },
-                {"fuelCaoacity", 100 },
-                {"burnRate", 2}
-            },
-            100, 10.0D / 60, 100, 100, 1000, 1),
-
-            new Stage(0, "Second Stage", "Initial rocket", null,
-            new Dictionary<string, int>()
-            {
-                { "cost", 0 },
-                {"fuelCaoacity", 200 },
-                {"burnRate", 4}
-            },
-            100, 10.0D / 60, 100, 100, 1000, 1),
-
-            new Stage(0, "First Stage", "Initial rocket", null,
-            new Dictionary<string, int>()
-            {
-                { "cost", 0 },
-                {"fuelCaoacity", 300 },
-                {"burnRate", 6}
-            },
-            100, 10.0D / 60, 100, 100, 1000, 1),
-
-            new Stage(0, "Third Stage", "Initial rocket", null,
-            new Dictionary<string, int>()
-            {
-                { "cost", 0 },
-                {"weight", 10 }
-            },
-            100, 10.0D / 60, 100, 100, 1000, 1),
-
-            new FuelTank(0, "Unsafe", "Initial rocket", null,
-            new Dictionary<string, int>()
-            {
-                { "cost", 0 },
-                {"weight", 30 }
-            },
-            1),
-
-            new FuelTank(0, "Safe", "Initial rocket", null,
-            new Dictionary<string, int>()
-            {
-                { "cost", 0 },
-                {"weight", 60 }
-            },
-            1),
-            new FuelType(0, "Volatile", "Initial rocket", null,
-            new Dictionary<string, int>()
-            {
-                { "cost", 0 },
-                {"accelerationPerUnitVolume", 1000 }
-            },
-            1),
-            new FuelType(0, "Unsafe", "Initial rocket", null,
-            new Dictionary<string, int>()
-            {
-                { "cost", 0 },
-                {"accelerationPerUnitVolume", 2000 }
-            },
-            1)
+            new FuelTank(1, "Small Tank", "Small and cheap.", "fuelOne",
+                         new Dictionary<string, int>{{"safety",1}, {"weight",30}, {"cost", 100}}),
+            new FuelTank(1, "Medium Tank", "Average", "fuelTwo",
+                         new Dictionary<string, int>{{"safety",2}, {"weight",60}, {"cost", 200}}),
+            new FuelTank(1, "Large Tank", "Large and expensive.", "fuelThree",
+                         new Dictionary<string, int>{{"safety",3}, {"weight",90}, {"cost", 300}})
         };
+
+        this.fuelTypes = new List<FuelType>()
+        {
+            new FuelType(1, "Inefficient Fuel", "Small and cheap.", "fuelOne",
+                         new Dictionary<string, int>{{"acceleration",1000}, {"weight",1}, { "volatility", 1}, {"cost",100}}),
+            new FuelType(1, "Standard Fuel", "Average", "fuelTwo",
+                         new Dictionary<string, int>{{ "acceleration", 2000}, { "weight", 2 }, {"volatility", 2}, {"cost", 200}}),
+            new FuelType(1, "Efficient Fuel", "Large and expensive.", "fuelThree",
+                         new Dictionary<string, int>{{ "acceleration", 3000}, { "weight", 3 }, {"volatility", 3}, {"cost", 300}})
+        };
+
+        this.rocketConfigurations = new List<RocketConfiguration>()
+        {
+            new RocketConfiguration(1, "One Stage Rocket", "Only has one stage.", "fuelOne",
+                                    new Dictionary<string, int>{{"numStages",1},{"cost", 100}},  new List<double>(){100},  new List<double>(){100},  new List<double>(){0.2}),
+            new RocketConfiguration(1, "Two Stage Rocket", "Has a second stage but is more expensive.", "fuelTwo",
+                                    new Dictionary<string, int>{{"numStages",2},{"cost", 200 }}, new List<double>(){100,100},  new List<double>(){100,200},  new List<double>(){0.2,0.2}),
+            new RocketConfiguration(1, "Three Stage Rocket", "Most tages, most expensive.", "fuelThree",
+                         new Dictionary<string, int>{{"numStages",3}, {"cost", 300 }},  new List<double>(){100,100,100},  new List<double>(){100,200,300},  new List<double>(){0.2,0.2,0.2})
+        };
+
     }
 }
