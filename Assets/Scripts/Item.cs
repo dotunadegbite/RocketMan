@@ -20,7 +20,7 @@ public class Item
         this.description = description;
         this.icon = Resources.Load<Sprite>("Sprites/Items/" + iconName);
         this.stats = stats;
-        if (stats.ContainsKey("cost")){
+        if (stats != null && stats.ContainsKey("cost")){
             this.cost = stats["cost"];
         } else {
             this.cost = 0;
