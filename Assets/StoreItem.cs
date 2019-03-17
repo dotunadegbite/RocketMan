@@ -9,7 +9,7 @@ public class StoreItem : MonoBehaviour
     public Item currentItem;
     public TMP_Text description, cost;
     public GameObject textPrefab;
-    public List<Transform> statSpawns;
+    public List<TMP_Text> textHolders;
 
     private List<GameObject> createdStats;
 
@@ -34,17 +34,6 @@ public class StoreItem : MonoBehaviour
 
     public void ShowDescription()
     {
-        Debug.Log("There are this many things in the list: " + this.createdStats.Count);
-        if(this.createdStats.Count > 0)
-        {
-            
-            while(this.createdStats.Count > 0)
-            {
-                Destroy(this.createdStats[0]);
-                Debug.Log(this.createdStats);
-                
-            }
-        }
 
         this.description.text = this.currentItem.description;
         this.cost.text = "$" + this.currentItem.cost;
@@ -53,12 +42,11 @@ public class StoreItem : MonoBehaviour
 
         for(int i = 0; i < stats.Count; i++)
         {
-            GameObject statObject = Instantiate(textPrefab, this.statSpawns[i]);
-            TMP_Text statText = textPrefab.GetComponent<TMP_Text>();
+
+            TMP_Text statText = this.textHolders[i];
             statText.text = stats[i] + ": " + this.currentItem.stats[stats[i]];
-            this.createdStats.Add(statObject);
+            statText.enabled = true;
             
         }
-        Debug.Log(this.createdStats.Count);
     }
 }

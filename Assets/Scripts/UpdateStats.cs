@@ -15,22 +15,17 @@ public class UpdateStats : MonoBehaviour
 
     public RocketController rocket;
 
-<<<<<<< HEAD
     private ItemDatabase db;
 
     private StoreItem item1, item2, item3;
-=======
 
     public bool hasWon;
 
     public Wallet wallet;
 
->>>>>>> 6b083e65d025ed6d27bf81b7a79747186292d842
     // Start is called before the first frame update
     void Start()
     {
-        //rocket = FindObjectOfType<RocketController>();
-<<<<<<< HEAD
         this.db = GetComponent<ItemDatabase>();
         this.itemIcon1.enabled = false;
         this.itemIcon2.enabled = false;
@@ -39,9 +34,7 @@ public class UpdateStats : MonoBehaviour
         this.item1 = this.itemIcon1.GetComponent<StoreItem>();
         this.item2 = this.itemIcon2.GetComponent<StoreItem>();
         this.item3 = this.itemIcon3.GetComponent<StoreItem>(); 
-=======
         hasWon = false;
->>>>>>> 6b083e65d025ed6d27bf81b7a79747186292d842
     }
 
     // Update is called once per frame
@@ -60,8 +53,6 @@ public class UpdateStats : MonoBehaviour
         this.currentMoney.text = "Cash balance: $" + wallet.getCash();
 
     }
-
-<<<<<<< HEAD
     public void LoadStoreItems(int itemType)
     {
 
@@ -109,6 +100,4 @@ public class UpdateStats : MonoBehaviour
     {
 
     }
-=======
->>>>>>> 6b083e65d025ed6d27bf81b7a79747186292d842
 }
