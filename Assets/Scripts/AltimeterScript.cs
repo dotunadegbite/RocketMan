@@ -6,9 +6,18 @@ public class AltimeterScript : MonoBehaviour
 {
 
     public float xCoord, yCoord;
+    private double targetAltitude, currentAltitude;
+    RocketController rocket;
+
+    private void Start()
+    {
+        rocket = FindObjectOfType<RocketController>();
+        targetAltitude = rocket.getTargetAltitude();
+    }
+
     private void OnGUI()
     {
-        // Constrain all drawing to be within a 800x600 pixel area centered on the screen.
+
         GUI.BeginGroup(new Rect(xCoord, yCoord, 300, 300));
 
         // Draw a box in the new coordinate space defined by the BeginGroup.
@@ -22,6 +31,6 @@ public class AltimeterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        currentAltitude = rocket.getAltitude();
     }
 }
