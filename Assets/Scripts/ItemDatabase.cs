@@ -30,7 +30,7 @@ public class ItemDatabase : MonoBehaviour
     {
         this.items = new List<Item>()
         {
-            new Stage(0, "First Stage", "Initial rocket", null,
+            new Stage(0, "First Stage", "Initial rocket", "fuelOne",
             new Dictionary<string, int>()
             {
                 { "cost", 0 },
@@ -39,7 +39,7 @@ public class ItemDatabase : MonoBehaviour
             },
             100, 10.0D / 60, 100, 100, 1000, 1),
 
-            new Stage(0, "Second Stage", "Initial rocket", null,
+            new Stage(0, "Second Stage", "Initial rocket", "fuelOne",
             new Dictionary<string, int>()
             {
                 { "cost", 0 },
@@ -48,7 +48,7 @@ public class ItemDatabase : MonoBehaviour
             },
             100, 10.0D / 60, 100, 100, 1000, 1),
 
-            new Stage(0, "First Stage", "Initial rocket", null,
+            new Stage(0, "First Stage", "Initial rocket", "fuelOne",
             new Dictionary<string, int>()
             {
                 { "cost", 0 },
@@ -57,7 +57,7 @@ public class ItemDatabase : MonoBehaviour
             },
             100, 10.0D / 60, 100, 100, 1000, 1),
 
-            new Stage(0, "Third Stage", "Initial rocket", null,
+            new Stage(0, "Third Stage", "Initial rocket", "fuelOne",
             new Dictionary<string, int>()
             {
                 { "cost", 0 },
@@ -65,7 +65,7 @@ public class ItemDatabase : MonoBehaviour
             },
             100, 10.0D / 60, 100, 100, 1000, 1),
 
-            new FuelTank(0, "Unsafe", "Initial rocket", null,
+            new FuelTank(0, "Unsafe", "Initial rocket", "fuelOne",
             new Dictionary<string, int>()
             {
                 { "cost", 0 },
@@ -73,21 +73,21 @@ public class ItemDatabase : MonoBehaviour
             },
             1),
 
-            new FuelTank(0, "Safe", "Initial rocket", null,
+            new FuelTank(0, "Safe", "Initial rocket", "fuelOne",
             new Dictionary<string, int>()
             {
                 { "cost", 0 },
                 {"weight", 60 }
             },
             1),
-            new FuelType(0, "Volatile", "Initial rocket", null,
+            new FuelType(0, "Volatile", "Initial rocket", "fuelOne",
             new Dictionary<string, int>()
             {
                 { "cost", 0 },
                 {"accelerationPerUnitVolume", 1000 }
             },
             1),
-            new FuelType(0, "Unsafe", "Initial rocket", null,
+            new FuelType(0, "Unsafe", "Initial rocket", "fuelOne",
             new Dictionary<string, int>()
             {
                 { "cost", 0 },
