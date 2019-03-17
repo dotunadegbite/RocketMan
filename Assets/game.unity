@@ -2826,6 +2826,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1874599923}
+  - component: {fileID: 1874599922}
+  - component: {fileID: 1874599925}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2833,6 +2835,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1874599922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874599921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c93a10b4ff0438642998d924da5c58c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1874599923
 Transform:
   m_ObjectHideFlags: 0
@@ -2847,6 +2861,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1874599925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874599921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7a8276392b740f0b00e9a8bd7ea845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocityText: {fileID: 1827768519}
+  currentAltitudeText: {fileID: 490234730}
+  gravityText: {fileID: 1593905293}
+  payloadText: {fileID: 1447317065}
+  targetAltitudeText: {fileID: 729654655}
+  fuelTypeText: {fileID: 130417914}
+  fuelTankText: {fileID: 90443888}
+  stagesText: {fileID: 958254637}
+  weightText: {fileID: 307167202}
+  costText: {fileID: 1123246355}
+  rocket: {fileID: 534936655}
 --- !u!1 &1950251707
 GameObject:
   m_ObjectHideFlags: 0
