@@ -8,11 +8,8 @@ using TMPro;
 public class UpdateStats : MonoBehaviour
 {
     // TMP_Text statsText;
-    public TMP_Text velocityText;
-    public TMP_Text currentAltitudeText;
-    public TMP_Text gravityText;
-    public TMP_Text payloadText;
-    public TMP_Text targetAltitudeText;
+    public TMP_Text velocityText, currentAltitudeText, gravityText, payloadText, 
+        targetAltitudeText, fuelTypeText, fuelTankText, stagesText, weightText, costText;
 
     public RocketController rocket;
     // Start is called before the first frame update
@@ -25,7 +22,7 @@ public class UpdateStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RefreshDisplay();
+        RefreshDisplay();   
     }
 
     private void RefreshDisplay()
