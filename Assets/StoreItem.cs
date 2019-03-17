@@ -11,13 +11,14 @@ public class StoreItem : MonoBehaviour
     public GameObject textPrefab;
     public List<Transform> statSpawns;
 
-    private List<GameObject> createdStats = new List<GameObject>();
+    private List<GameObject> createdStats;
 
     // Start is called before the first frame update
     void Start()
     {
         this.description.enabled = false;
         this.cost.enabled = false;
+        this.createdStats = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -33,12 +34,15 @@ public class StoreItem : MonoBehaviour
 
     public void ShowDescription()
     {
+        Debug.Log("There are this many things in the list: " + this.createdStats.Count);
         if(this.createdStats.Count > 0)
         {
-            foreach (GameObject obj in this.createdStats)
+            
+            while(this.createdStats.Count > 0)
             {
-                Debug.Log("Destroyed");
-                Destroy(obj);
+                Destroy(this.createdStats[0]);
+                Debug.Log(this.createdStats);
+                
             }
         }
 
@@ -53,6 +57,8 @@ public class StoreItem : MonoBehaviour
             TMP_Text statText = textPrefab.GetComponent<TMP_Text>();
             statText.text = stats[i] + ": " + this.currentItem.stats[stats[i]];
             this.createdStats.Add(statObject);
+            
         }
+        Debug.Log(this.createdStats.Count);
     }
 }
