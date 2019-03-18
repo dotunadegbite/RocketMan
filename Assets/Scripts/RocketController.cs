@@ -188,6 +188,7 @@ public class RocketController : MonoBehaviour
 
     public void setRocketConfiguration(RocketConfiguration config)
     {
+        Debug.Log("setting config " + config.numStages);
         currentRocketConfiguration = config;
         stages.Clear();
         for(int stage = 0; stage < config.numStages; stage++)
