@@ -19,6 +19,10 @@ public class RocketController : MonoBehaviour
 
     public Text winText;
 
+    public Sprite oneStageSprite;
+    public Sprite twoStageSprite;
+    public Sprite threeStageSprite;
+
     FuelType currentFuelType;
     FuelTank currentFuelTank;
     RocketConfiguration currentRocketConfiguration;
@@ -56,6 +60,22 @@ public class RocketController : MonoBehaviour
         {
             startRocket();
         }*/
+
+        if (currentRocketConfiguration != null)
+        {
+            switch (currentRocketConfiguration.numStages)
+            {
+                case 1:
+                    this.GetComponent<SpriteRenderer>().sprite = oneStageSprite;
+                    break;
+                case 2:
+                    this.GetComponent<SpriteRenderer>().sprite = twoStageSprite;
+                    break;
+                case 3:
+                    this.GetComponent<SpriteRenderer>().sprite = threeStageSprite;
+                    break;
+            }
+        }
     }
 
     public void startRocket()
