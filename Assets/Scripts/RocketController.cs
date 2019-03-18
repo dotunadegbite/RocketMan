@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class RocketController : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class RocketController : MonoBehaviour
     public double targetAltitude;
     double payLoad;
     public double altitude, velocity;
-    public double gravity = 9.8;
+    public double gravity;
 
     public GameObject completionPanel;
 
@@ -37,13 +38,17 @@ public class RocketController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gravity = Math.Round(UnityEngine.Random.Range(4f, 20f),2);
+
+
+
         renderer = this.GetComponent<SpriteRenderer>();
         updateStats = FindObjectOfType<UpdateStats>();
         winText.gameObject.SetActive(false);
 
         //These should be set semi randomly, depending on gravity and mission
-        targetAltitude = 2000.0d; // in km
-        payLoad = 10.0d; //In kg
+        targetAltitude = Math.Round(UnityEngine.Random.Range(1000f, 50000f),0); ; // in km
+        payLoad = Math.Round(UnityEngine.Random.Range(1f,100f),2); //In kg
         //Let's do this metric
 
         Debug.Log("rocket starting");
