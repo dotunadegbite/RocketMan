@@ -18,10 +18,13 @@ public class CameraController : MonoBehaviour
                     minStarHeight = maxHeight / 3 * 1.3f;
     private bool starsGenerated;
 
+    private List<GameObject> clouds;
+
     public Camera cam;
 
     void Start()
     {
+        clouds = new List<GameObject>();
         H = 0.5527777778f;
         S = 0.69f;
         originalV = 0.96f;
@@ -71,6 +74,21 @@ public class CameraController : MonoBehaviour
             Random.RandomRange(40, 80));
 
         cube.transform.localScale = new Vector3(Random.Range(3, 9), Random.RandomRange(3, 9), 1);
+        clouds.Add(cube);
+
+        List<GameObject> newClouds = new List<GameObject>();
+        foreach(GameObject cloud in clouds)
+        {
+            if (transform.position.y - cloud.transform.position.y > 30)
+            {
+                Destroy(cloud);
+            }
+            else
+            {
+                newClouds.Add(cloud);
+            }
+        }
+        clouds = newClouds;
     }
 
     void generateStars()
