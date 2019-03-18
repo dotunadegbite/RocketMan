@@ -249,6 +249,26 @@ public class RocketController : MonoBehaviour
         return currentWeight;
     }
 
+    public double getCost()
+    {
+        double currentCost = 0;
+        if(currentFuelTank != null)
+        {
+            currentCost += currentFuelTank.cost;
+        }
+
+        if (currentFuelType != null)
+        {
+            currentCost += currentFuelType.cost;
+        }
+
+        if (currentRocketConfiguration != null)
+        {
+            currentCost += currentRocketConfiguration.cost;
+        }
+
+        return currentCost;
+    }
 
     public double getTargetAltitude()
     {
