@@ -52,43 +52,44 @@ public class UpdateStats : MonoBehaviour
         this.targetAltitudeText.text = "Target Altitude " + this.rocket.getTargetAltitude() + "m";
         this.currentMoney.text = "Cash balance: $" + wallet.getCash();
 
+
+
+
     }
     public void LoadStoreItems(int itemType)
     {
-
-
         if (itemType == 0)
         {
             this.itemIcon1.sprite = this.db.fuelTypes[0].icon;
-            this.item1.Setup(this.db.fuelTypes[0]);
+            this.item1.Setup(this.db.fuelTypes[0],itemType, this.db.fuelTypes[0]);
 
             this.itemIcon2.sprite = this.db.fuelTypes[1].icon;
-            this.item2.Setup(this.db.fuelTypes[1]);
+            this.item2.Setup(this.db.fuelTypes[1], itemType, this.db.fuelTypes[1]);
 
             this.itemIcon3.sprite = this.db.fuelTypes[2].icon;
-            this.item3.Setup(this.db.fuelTypes[2]);
+            this.item3.Setup(this.db.fuelTypes[2], itemType, this.db.fuelTypes[2]);
         }
         else if (itemType == 1)
         {
             this.itemIcon1.sprite = this.db.fuelTanks[0].icon;
-            this.item1.Setup(this.db.fuelTanks[0]);
+            this.item1.Setup(this.db.fuelTanks[0], itemType,null, this.db.fuelTanks[0]);
 
             this.itemIcon2.sprite = this.db.fuelTanks[1].icon;
-            this.item2.Setup(this.db.fuelTanks[1]);
+            this.item2.Setup(this.db.fuelTanks[1], itemType, null, this.db.fuelTanks[1]);
 
             this.itemIcon3.sprite = this.db.fuelTanks[2].icon;
-            this.item3.Setup(this.db.fuelTanks[2]);
+            this.item3.Setup(this.db.fuelTanks[2], itemType, null, this.db.fuelTanks[2]);
         }
         else if (itemType == 2)
         {
             this.itemIcon1.sprite = this.db.rocketConfigurations[0].icon;
-            this.item1.Setup(this.db.rocketConfigurations[0]);
+            this.item1.Setup(this.db.rocketConfigurations[0], itemType, null, null, this.db.rocketConfigurations[0]);
 
             this.itemIcon2.sprite = this.db.rocketConfigurations[1].icon;
-            this.item2.Setup(this.db.rocketConfigurations[1]);
+            this.item2.Setup(this.db.rocketConfigurations[1], itemType, null, null, this.db.rocketConfigurations[1]);
 
             this.itemIcon3.sprite = this.db.rocketConfigurations[2].icon;
-            this.item3.Setup(this.db.rocketConfigurations[2]);
+            this.item3.Setup(this.db.rocketConfigurations[2], itemType, null, null, this.db.rocketConfigurations[2]);
         }
 
         this.itemIcon1.enabled = true;
@@ -96,8 +97,4 @@ public class UpdateStats : MonoBehaviour
         this.itemIcon3.enabled = true;
     }
 
-    public void DisplayItemStats(Item item)
-    {
-
-    }
 }

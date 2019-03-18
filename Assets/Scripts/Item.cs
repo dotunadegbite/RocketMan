@@ -12,12 +12,14 @@ public class Item
     public Sprite icon;
     public bool beenPurchased = false;
     public Dictionary<string, int> stats = new Dictionary<string, int>();
+    public string iconName;
 
     public Item(int id, string title, string description, string iconName, Dictionary<string, int> stats)
     {
         this.id = id;
         this.title = title;
         this.description = description;
+        this.iconName = iconName;
         this.icon = Resources.Load<Sprite>("Sprites/Items/" + iconName);
         this.stats = stats;
 

@@ -37,11 +37,11 @@ public class ItemDatabase : MonoBehaviour
     {
         this.fuelTanks = new List<FuelTank>()
         {
-            new FuelTank(1, "Small Tank", "Small and cheap.", "fuelOne",
+            new FuelTank(1, "Small Tank", "Small and cheap.", "tankOne",
                          new Dictionary<string, int>{{"safety",1}, {"weight",30}, {"cost", 100}}),
-            new FuelTank(2, "Medium Tank", "Average", "fuelTwo",
+            new FuelTank(2, "Medium Tank", "Average", "tankTwo",
                          new Dictionary<string, int>{{"safety",2}, {"weight",60}, {"cost", 200}}),
-            new FuelTank(3, "Large Tank", "Large and expensive.", "fuelThree",
+            new FuelTank(3, "Large Tank", "Large and expensive.", "tankThree",
                          new Dictionary<string, int>{{"safety",3}, {"weight",90}, {"cost", 300}})
         };
 

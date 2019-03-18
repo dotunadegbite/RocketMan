@@ -226,7 +226,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -20}
-  m_SizeDelta: {x: 176.24, y: 25.58}
+  m_SizeDelta: {x: 231.08, y: 25.58}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &90443888
 MonoBehaviour:
@@ -1226,8 +1226,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 28.56, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 449.1, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &353587946
 MonoBehaviour:
@@ -1284,7 +1284,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 257
+  m_textAlignment: 258
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1467,7 +1467,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -200}
-  m_SizeDelta: {x: 179.59998, y: 154.20001}
+  m_SizeDelta: {x: 253.97, y: 154.2}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &481448288
 MonoBehaviour:
@@ -1820,8 +1820,13 @@ MonoBehaviour:
     cost: 0
     icon: {fileID: 0}
     beenPurchased: 0
+    iconName: 
+  itemType: 0
   description: {fileID: 353587946}
   cost: {fileID: 350846440}
+  fuelTankText: {fileID: 90443888}
+  fuelTypeText: {fileID: 130417914}
+  stagesText: {fileID: 958254637}
   textPrefab: {fileID: 4947836711782122012, guid: 9013ed5c45009df47a778454300beada,
     type: 3}
   textHolders:
@@ -1829,6 +1834,7 @@ MonoBehaviour:
   - {fileID: 2037195062}
   - {fileID: 816667531}
   - {fileID: 1410507132}
+  rocket: {fileID: 534936655}
 --- !u!1 &534936654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2770,8 +2776,13 @@ MonoBehaviour:
     cost: 0
     icon: {fileID: 0}
     beenPurchased: 0
+    iconName: 
+  itemType: 0
   description: {fileID: 353587946}
   cost: {fileID: 350846440}
+  fuelTankText: {fileID: 90443888}
+  fuelTypeText: {fileID: 130417914}
+  stagesText: {fileID: 958254637}
   textPrefab: {fileID: 4947836711782122012, guid: 9013ed5c45009df47a778454300beada,
     type: 3}
   textHolders:
@@ -2779,6 +2790,7 @@ MonoBehaviour:
   - {fileID: 2037195062}
   - {fileID: 816667531}
   - {fileID: 1410507132}
+  rocket: {fileID: 534936655}
 --- !u!1 &958254635
 GameObject:
   m_ObjectHideFlags: 0
@@ -4343,8 +4355,13 @@ MonoBehaviour:
     cost: 0
     icon: {fileID: 0}
     beenPurchased: 0
+    iconName: 
+  itemType: 0
   description: {fileID: 353587946}
   cost: {fileID: 350846440}
+  fuelTankText: {fileID: 90443888}
+  fuelTypeText: {fileID: 130417914}
+  stagesText: {fileID: 958254637}
   textPrefab: {fileID: 4947836711782122012, guid: 9013ed5c45009df47a778454300beada,
     type: 3}
   textHolders:
@@ -4352,6 +4369,7 @@ MonoBehaviour:
   - {fileID: 2037195062}
   - {fileID: 816667531}
   - {fileID: 1410507132}
+  rocket: {fileID: 534936655}
 --- !u!1 &1561686811
 GameObject:
   m_ObjectHideFlags: 0
@@ -4818,7 +4836,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1768938365}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1524796243}
+        m_MethodName: EquipRocketParts
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1768938365
