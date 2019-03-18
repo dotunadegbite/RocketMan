@@ -42,7 +42,6 @@ public class CameraController : MonoBehaviour
             transform.position,
             rocket.transform.position - new Vector3(0, 0, 10), ref velocity, smoothTime);
         transform.position = new Vector3(smoothedTransform.x, rocket.transform.position.y, transform.position.z);
-        Debug.Log(transform.position);
         changeBackgroundColor();
 
         float y = transform.position.y;

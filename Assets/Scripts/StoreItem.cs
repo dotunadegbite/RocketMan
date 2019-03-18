@@ -77,14 +77,6 @@ public class StoreItem : MonoBehaviour
             
         }
 
-
-        this.fuelTankText.text = this.currentTank != null ? "Fuel Tank: " + this.currentTank.title : "Fuel Tank: ";
-        this.fuelTypeText.text = this.currentType != null ? "Fuel Type: " + this.currentType.title : "Fuel Type: ";
-        this.stagesText.text = this.currentConfig != null ? "Number of stages: " + this.currentConfig.numStages : "Number of stages: ";
-
-        //this.fuelTankText.text = "Fuel Tank: " + this.rocket.getCurrentFuelTank().title;
-        //this.fuelTypeText.text = "Fuel Type: " + this.rocket.getCurrentFuelType().title;
-        //this.stagesText.text = "Number of stages: " + this.rocket.getCurrentRocketConfiguration().numStages;
     }
 
     public void EquipRocketParts()
@@ -100,5 +92,20 @@ public class StoreItem : MonoBehaviour
             
         else if (this.currentConfig != null)
             this.rocket.setRocketConfiguration(this.currentConfig);
+
+        switch (this.itemType)
+        {
+            case 0:
+                this.fuelTypeText.text = this.currentType != null ? "Fuel Type: " + this.currentType.title : "Fuel Type: ";
+                break;
+
+            case 1:
+                this.fuelTankText.text = this.currentTank != null ? "Fuel Tank: " + this.currentTank.title : "Fuel Tank: ";
+                break;
+
+            case 2:
+                this.stagesText.text = this.currentConfig != null ? "Number of stages: " + this.currentConfig.numStages : "Number of stages: ";
+                break;
+        }
     }
 }
