@@ -30,7 +30,7 @@ public class CompletionPopupScript : MonoBehaviour
     {
         if(updateStats.hasWon)
         {
-            //wallet.updateCash(5000); //This is your payment for completing the mission.
+            wallet.updateCash(5000); //This is your payment for completing the mission.
         }
         else
         {
