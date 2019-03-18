@@ -7,6 +7,8 @@ public class LaunchScript : MonoBehaviour
 {
     private RocketController rocket;
     public Button launchButton;
+
+    public GameObject rocketStats, menu, itemInfo;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,10 @@ public class LaunchScript : MonoBehaviour
     {
 
         rocket.startRocket();
+        this.rocketStats.SetActive(false);
+        this.itemInfo.SetActive(false);
+        this.menu.SetActive(false);
+
         this.gameObject.SetActive(false);
 
     }
