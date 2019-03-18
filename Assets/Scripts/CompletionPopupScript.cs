@@ -41,6 +41,6 @@ public class CompletionPopupScript : MonoBehaviour
 
     public void onQuitClick()
     {
-
+        Application.Quit();
     }
 }
