@@ -47,8 +47,8 @@ public class RocketController : MonoBehaviour
         winText.gameObject.SetActive(false);
 
         //These should be set semi randomly, depending on gravity and mission
-        targetAltitude = Math.Round(UnityEngine.Random.Range(1000f, 50000f),0); ; // in km
-        payLoad = Math.Round(UnityEngine.Random.Range(1f,100f),2); //In kg
+        targetAltitude = Math.Round(UnityEngine.Random.Range(1000f, 5000f),0); ; // in km
+        payLoad = Math.Round(UnityEngine.Random.Range(1f,70f),2); //In kg
         //Let's do this metric
 
         Debug.Log("rocket starting");
