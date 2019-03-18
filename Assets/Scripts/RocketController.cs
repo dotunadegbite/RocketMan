@@ -23,6 +23,8 @@ public class RocketController : MonoBehaviour
     public Sprite twoStageSprite;
     public Sprite threeStageSprite;
 
+    private SpriteRenderer renderer;
+
     FuelType currentFuelType;
     FuelTank currentFuelTank;
     RocketConfiguration currentRocketConfiguration;
@@ -30,6 +32,7 @@ public class RocketController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        renderer = this.GetComponent<SpriteRenderer>();
         updateStats = FindObjectOfType<UpdateStats>();
         winText.gameObject.SetActive(false);
 
@@ -63,19 +66,22 @@ public class RocketController : MonoBehaviour
 
         if (currentRocketConfiguration != null)
         {
+            renderer.enabled = true;
             Debug.Log(currentRocketConfiguration.numStages);
             switch (currentRocketConfiguration.numStages)
             {
                 case 1:
-                    this.GetComponent<SpriteRenderer>().sprite = oneStageSprite;
+                    renderer.sprite = oneStageSprite;
                     break;
                 case 2:
-                    this.GetComponent<SpriteRenderer>().sprite = twoStageSprite;
+                    renderer.sprite = twoStageSprite;
                     break;
                 case 3:
-                    this.GetComponent<SpriteRenderer>().sprite = threeStageSprite;
+                    renderer.sprite = threeStageSprite;
                     break;
             }
+        } else {
+            renderer.enabled = false;
         }
     }
 
