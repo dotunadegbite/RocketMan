@@ -42,7 +42,7 @@ public class RocketController : MonoBehaviour
         winText.gameObject.SetActive(false);
 
         //These should be set semi randomly, depending on gravity and mission
-        targetAltitude = 2000.0d; // in km
+        targetAltitude = 100.0d; // in km
         payLoad = 10.0d; //In kg
         //Let's do this metric
 

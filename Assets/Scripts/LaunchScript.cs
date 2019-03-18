@@ -7,6 +7,7 @@ public class LaunchScript : MonoBehaviour
 {
     private RocketController rocket;
     public Button launchButton;
+    public Wallet wallet;
 
     public GameObject rocketStats, menu, itemInfo;
     // Start is called before the first frame update
@@ -15,6 +16,7 @@ public class LaunchScript : MonoBehaviour
         rocket = FindObjectOfType<RocketController>();
         this.launchButton.interactable = false;
         //this.GetComponent<>
+        this.wallet = GameObject.Find("Wallet").GetComponent<Wallet>();
     }
 
     private void Update()
@@ -29,13 +31,18 @@ public class LaunchScript : MonoBehaviour
 
     public void onClickLaunch() 
     {
+        int remainingCash = this.wallet.getCash() - (int)this.rocket.getCost();
+        if(remainingCash >= 0)
+        {
+            rocket.startRocket();
+            //this.rocketStats.SetActive(false);
+            this.itemInfo.SetActive(false);
+            this.menu.SetActive(false);
 
-        rocket.startRocket();
-        this.rocketStats.SetActive(false);
-        this.itemInfo.SetActive(false);
-        this.menu.SetActive(false);
+            this.wallet.setCash(remainingCash);
 
-        this.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
+        }
 
     }
 

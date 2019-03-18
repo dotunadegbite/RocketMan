@@ -23,10 +23,29 @@ public class UpdateStats : MonoBehaviour
 
     public Wallet wallet;
 
+   
+
+    // Use this for initialization
+    /*private void Awake()
+    {
+        if (!created)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            created = true;
+            this.wallet.setCash(10000);
+        }
+        else
+        {
+            Debug.Log("Destroy mamager");
+            Destroy(this);
+        }
+    }*/
+
     // Start is called before the first frame update
     void Start()
     {
         this.db = GetComponent<ItemDatabase>();
+        this.wallet = GameObject.Find("Wallet").GetComponent<Wallet>();
         this.itemIcon1.enabled = false;
         this.itemIcon2.enabled = false;
         this.itemIcon3.enabled = false;

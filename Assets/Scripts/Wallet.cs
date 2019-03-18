@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Wallet : MonoBehaviour
 {
+    [SerializeField]
     private int cash;
+    [SerializeField]
+    private static bool created = false;
 
     public void setCash(int cash)
     {
@@ -23,7 +26,16 @@ public class Wallet : MonoBehaviour
 
     private void Awake()
     {
-        cash = 10000;
-        DontDestroyOnLoad(this.gameObject);
+        if (!created)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            created = true;
+            this.setCash(10000);
+        }
+        else
+        {
+            Debug.Log("Destroy mamager");
+            Destroy(this);
+        }
     }
 }
