@@ -37,6 +37,7 @@ public class StoreItem : MonoBehaviour
         this.currentItem = item;
         this.itemType = itemType;
 
+        
         switch (this.itemType)
         {
             case 0:
@@ -99,15 +100,37 @@ public class StoreItem : MonoBehaviour
     public void EquipRocketParts()
     {
         Debug.Log("running " + this.itemType);
+
+        switch (this.itemType)
+        {
+            case 0:
+                this.rocket.setFuelType((FuelType)this.currentItem);
+
+                break;
+
+            case 1:
+                this.rocket.setFuelTank((FuelTank)this.currentItem);
+
+                break;
+
+            case 2:
+                this.rocket.setRocketConfiguration((RocketConfiguration)this.currentItem);
+
+                break;
+        }
+        /*
         if (this.currentType != null)
-            this.rocket.setFuelType(this.currentType);
+            this.rocket.setFuelType((FuelType)this.currentItem);
         else if (this.currentTank != null)
         {
             Debug.Log(this.currentTank.cost);
-            this.rocket.setFuelTank(this.currentTank);
+            this.rocket.setFuelTank((FuelTank)this.currentItem);
         }
-            
+
         else if (this.currentConfig != null)
-            this.rocket.setRocketConfiguration(this.currentConfig);
+        {
+            this.rocket.setRocketConfiguration((RocketConfiguration)this.currentItem);
+            Debug.Log("equip: " + this.currentConfig.numStages);
+        }*/
     }
 }
