@@ -22,14 +22,6 @@ public class CompletionPopupScript : MonoBehaviour
 
     public void Update()
     {
-        if(updateStats.hasWon)
-        {
-            completionText.text = "Amazing work, you are rewarded with lots of money";
-        }
-        else
-        {
-            completionText.text = "Due to your failure, you will not be compensated for this round";
-        }
     }
 
 
