@@ -23,6 +23,8 @@ public class UpdateStats : MonoBehaviour
 
     public Wallet wallet;
 
+    public TMP_Text missionText;
+
    
 
     // Use this for initialization
@@ -54,6 +56,39 @@ public class UpdateStats : MonoBehaviour
         this.item2 = this.itemIcon2.GetComponent<StoreItem>();
         this.item3 = this.itemIcon3.GetComponent<StoreItem>(); 
         hasWon = false;
+        setMissionDescription();
+    }
+
+
+    void setMissionDescription()
+    {
+        string agency;
+        switch ((int)UnityEngine.Random.Range(0,4))
+        {
+            case 0:
+                agency = "The ESA";
+                break;
+            case 1:
+                agency = "NASA";
+                break;
+            case 2:
+                agency = "Roscosmos";
+                break;
+            case 3:
+                agency = "A terrorist organisation";
+                break;
+            case 4:
+                agency = "Elon Musk";
+                break;
+            default:
+                agency = "No one";
+                break;
+        }
+        missionText.text = agency + " wants you to build them a rocket that can carry " + this.rocket.getPayload() + 
+        " kg into space. On this planet, the gravitational acceleration is "+ this.rocket.getGravity()+"m/s/s, and they need you to reach " +
+           this.rocket.getTargetAltitude() + " meters. For this you will get money. If you fail, you must cover the rocket expenses yourself. Good luck.";
+
+
     }
 
     // Update is called once per frame
@@ -66,7 +101,7 @@ public class UpdateStats : MonoBehaviour
     {
         this.velocityText.text = "Speed: " + Math.Round(this.rocket.getVelocity(), 2) + "m/s";
         this.currentAltitudeText.text = "Altitude: " + Math.Round(this.rocket.getAltitude(), 2) + "m ";
-        this.gravityText.text = "Current Gravity: " + this.rocket.getGravity() + "m/s";
+        this.gravityText.text = "Current Gravity: " + this.rocket.getGravity() + "m/s/s";
         this.payloadText.text = "Payload Weight: " + this.rocket.getPayload() + "kg";
         this.targetAltitudeText.text = "Target Altitude " + this.rocket.getTargetAltitude() + "m";
         this.currentMoney.text = "Cash balance: $" + wallet.getCash();
