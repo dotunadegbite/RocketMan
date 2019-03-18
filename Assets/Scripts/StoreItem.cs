@@ -11,7 +11,7 @@ public class StoreItem : MonoBehaviour
     public FuelTank currentTank;
     public FuelType currentType;
     public int itemType;
-    public TMP_Text description, cost, fuelTankText, fuelTypeText, stagesText;
+    public TMP_Text description, cost, fuelTankText, fuelTypeText, stagesText, costText, weightText;
     public GameObject textPrefab;
     public List<TMP_Text> textHolders;
     public RocketController rocket;
@@ -93,7 +93,11 @@ public class StoreItem : MonoBehaviour
                 break;
         }
 
+
         EquipRocketParts();
+
+        this.costText.text = "Total cost: $" + this.rocket.getCost();
+        this.weightText.text = "Total weight: " + this.rocket.getWeight() + "kg";
 
     }
 
