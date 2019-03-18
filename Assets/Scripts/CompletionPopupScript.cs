@@ -28,14 +28,6 @@ public class CompletionPopupScript : MonoBehaviour
 
     public void onContinueClick()
     {
-        if(updateStats.hasWon)
-        {
-            wallet.updateCash(5000); //This is your payment for completing the mission.
-        }
-        else
-        {
-            wallet.updateCash(-3000); //This is where you pay for your rocket
-        }
         SceneManager.LoadScene("game");
     }
 
