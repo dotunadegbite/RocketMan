@@ -77,22 +77,6 @@ public class StoreItem : MonoBehaviour
             
         }
 
-    }
-
-    public void EquipRocketParts()
-    {
-        if (this.currentType != null)
-            this.rocket.setFuelType(this.currentType);
-        else if (this.currentTank != null)
-        {
-            Debug.Log(this.currentTank.cost);
-            this.rocket.setFuelTank(this.currentTank);
-
-        }
-            
-        else if (this.currentConfig != null)
-            this.rocket.setRocketConfiguration(this.currentConfig);
-
         switch (this.itemType)
         {
             case 0:
@@ -107,5 +91,23 @@ public class StoreItem : MonoBehaviour
                 this.stagesText.text = this.currentConfig != null ? "Number of stages: " + this.currentConfig.numStages : "Number of stages: ";
                 break;
         }
+
+        EquipRocketParts();
+
+    }
+
+    public void EquipRocketParts()
+    {
+        Debug.Log("running " + this.itemType);
+        if (this.currentType != null)
+            this.rocket.setFuelType(this.currentType);
+        else if (this.currentTank != null)
+        {
+            Debug.Log(this.currentTank.cost);
+            this.rocket.setFuelTank(this.currentTank);
+        }
+            
+        else if (this.currentConfig != null)
+            this.rocket.setRocketConfiguration(this.currentConfig);
     }
 }
