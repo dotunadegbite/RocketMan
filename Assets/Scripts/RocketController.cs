@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class RocketController : MonoBehaviour
 {
@@ -25,7 +26,9 @@ public class RocketController : MonoBehaviour
 
     private SpriteRenderer renderer;
 
-    public CompletionPopupScript completionPopupScript;
+    public TMP_Text completionText;
+
+    //public CompletionPopupScript completionPopupScript;
 
     FuelType currentFuelType;
     FuelTank currentFuelTank;
@@ -34,7 +37,6 @@ public class RocketController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        completionPopupScript = this.GetComponent<CompletionPopupScript>();
         renderer = this.GetComponent<SpriteRenderer>();
         updateStats = FindObjectOfType<UpdateStats>();
         winText.gameObject.SetActive(false);
@@ -113,7 +115,7 @@ public class RocketController : MonoBehaviour
 
     void hasWon()
     {
-        completionPopupScript.completionText.text = "Yay!";
+        completionText.text = "Yay!";
         updateStats.hasWon = true;
         flying = false;
         completionPanel.gameObject.SetActive(true);
@@ -121,7 +123,7 @@ public class RocketController : MonoBehaviour
 
     void hasLost()
     {
-        completionPopupScript.completionText.text = "No!";
+        completionText.text = "No!";
         flying = false;
         completionPanel.gameObject.SetActive(true);
     }
