@@ -19,8 +19,13 @@ public class ChangeScene : MonoBehaviour
         
     }
 
-    public void SwitchScene()
+    public void LoadGameScene()
     {
         SceneManager.LoadScene("game");
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("MissionScreen");
     }
 }
