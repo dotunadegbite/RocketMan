@@ -8,12 +8,16 @@ public class CompletionPopupScript : MonoBehaviour
 {
 
     public TMP_Text completionText;
-    public UpdateStats updateStats;
-    public Wallet wallet;
+    UpdateStats updateStats;
+    Wallet wallet;
+    public GameObject popup;
+
     // Start is called before the first frame update
     void Start()
     {
         wallet = FindObjectOfType<Wallet>();
+        popup.SetActive(false);
+        updateStats = FindObjectOfType<UpdateStats>();
     }
 
     public void Update()

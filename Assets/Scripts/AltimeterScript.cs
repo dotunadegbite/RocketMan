@@ -26,6 +26,8 @@ public class AltimeterScript : MonoBehaviour
         GUI.Box(new Rect(250, 0, 50, 300), backgroundTexture);
         GUI.Box(new Rect(250, (float)(300 * (targetAltitude - currentAltitude) / targetAltitude), 50, 300- (float)(300 * (targetAltitude - currentAltitude) / targetAltitude)), fillTexture);
 
+
+
         // We need to match all BeginGroup calls with an EndGroup
         GUI.EndGroup();
     }
