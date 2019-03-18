@@ -65,7 +65,6 @@ public class RocketController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log("rocket moving");
         if (flying)
         {
             updatePosition();
@@ -117,7 +116,6 @@ public class RocketController : MonoBehaviour
         velY += accelerationY;
         posY += velY * Time.deltaTime;
         posY = posY > 0 ? posY : 0.0D;
-        Debug.Log(posY + " " + velY + " " + accelerationY);
 
         // wind
         altitude = posY;
@@ -180,8 +178,15 @@ public class RocketController : MonoBehaviour
                 config.weights[stage],
                 0, 0));
         }
-        setFuelTank(currentFuelTank);
-        setFuelType(currentFuelType);
+        if (currentFuelTank != null)
+        {
+            setFuelTank(currentFuelTank);
+        }
+
+        if (currentFuelType != null)
+        {
+            setFuelType(currentFuelType);
+        }
     }
 
 
