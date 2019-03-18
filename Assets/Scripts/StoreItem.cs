@@ -77,7 +77,6 @@ public class StoreItem : MonoBehaviour
             
         }
 
-        
     }
 
     public void EquipRocketParts()
