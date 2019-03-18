@@ -23,7 +23,7 @@ public class Wallet : MonoBehaviour
 
     private void Awake()
     {
-
+        cash = 10000;
         DontDestroyOnLoad(this.gameObject);
     }
 }
