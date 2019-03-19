@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour
     public GameObject rocket;
     public float smoothTime = 1F;
     private Vector3 velocity = Vector3.zero;
+    public GameObject cloudObject;
 
     private float startTime;
     public float GameDuration;
@@ -67,19 +68,19 @@ public class CameraController : MonoBehaviour
 
     void generateClouds()
     {
-        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        cube.transform.position = new Vector3(
+        GameObject newCloud = Instantiate(cloudObject);
+        newCloud.transform.position = new Vector3(
             transform.position.x + Random.RandomRange(0, 120) - 60,
-            transform.position.y * 1.05f + Random.Range(0, 10),
+            transform.position.y * 1.05f + Random.Range(20, 30),
             Random.RandomRange(40, 80));
 
-        cube.transform.localScale = new Vector3(Random.Range(3, 9), Random.RandomRange(3, 9), 1);
-        clouds.Add(cube);
+        newCloud.transform.localScale = new Vector3(Random.Range(3, 9), Random.RandomRange(3, 9), 1);
+        clouds.Add(newCloud);
 
         List<GameObject> newClouds = new List<GameObject>();
         foreach(GameObject cloud in clouds)
         {
-            if (transform.position.y - cloud.transform.position.y > 30)
+            if (transform.position.y - cloud.transform.position.y > 40)
             {
                 Destroy(cloud);
             }

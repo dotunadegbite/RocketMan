@@ -356,7 +356,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Fuel Tank: Good'
+  m_text: 'Fuel Tank: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -425,10 +425,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 90443888}
-    characterCount: 15
+    characterCount: 11
     spriteCount: 0
     spaceCount: 2
-    wordCount: 3
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -597,7 +597,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Fuel Type: Good'
+  m_text: 'Fuel Type: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -666,10 +666,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 130417914}
-    characterCount: 15
+    characterCount: 11
     spriteCount: 0
     spaceCount: 2
-    wordCount: 3
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -878,7 +878,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Total weight: 120 tons'
+  m_text: 'Total weight:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -947,10 +947,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 307167202}
-    characterCount: 22
+    characterCount: 13
     spriteCount: 0
-    spaceCount: 3
-    wordCount: 4
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -1989,9 +1989,9 @@ MonoBehaviour:
   completionPanel: {fileID: 23982989}
   updateStats: {fileID: 1874599925}
   winText: {fileID: 55988271}
-  oneStageSprite: {fileID: 21300000, guid: 8b6d11a20c3a14befa333b4c036b5925, type: 3}
-  twoStageSprite: {fileID: 21300000, guid: 476ea65e570fa4173b8744e1b753a555, type: 3}
-  threeStageSprite: {fileID: 21300000, guid: 1f9a620410fcc4d8ab25ffd07006e4a2, type: 3}
+  oneStageSprite: {fileID: 21300000, guid: 797480dccc52744f28be64b532cb15dd, type: 3}
+  twoStageSprite: {fileID: 21300000, guid: 32f85fb640a9348b89e8861d1fa1cbd6, type: 3}
+  threeStageSprite: {fileID: 21300000, guid: f55df71bbc6bf43df94556940ee7aae1, type: 3}
   completionText: {fileID: 916118768}
 --- !u!136 &534936656
 CapsuleCollider:
@@ -3558,7 +3558,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Number of Stages: 4'
+  m_text: 'Number of Stages:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3627,10 +3627,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 958254637}
-    characterCount: 19
+    characterCount: 17
     spriteCount: 0
-    spaceCount: 3
-    wordCount: 4
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -5672,6 +5672,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocket: {fileID: 534936654}
   smoothTime: 1
+  cloudObject: {fileID: 4456183562625571956, guid: 02fdd7869082c4832bba2827e618aff0,
+    type: 3}
   GameDuration: 10
   cam: {fileID: 0}
 --- !u!1 &1593905291

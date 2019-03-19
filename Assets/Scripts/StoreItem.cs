@@ -18,26 +18,29 @@ public class StoreItem : MonoBehaviour
 
     private List<GameObject> createdStats;
 
+    private List<string> ignoreStats;
+
     // Start is called before the first frame update
     void Start()
     {
         this.description.enabled = false;
         this.cost.enabled = false;
         this.createdStats = new List<GameObject>();
+        ignoreStats = new List<string>() { "safety", "volatility" };
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void Setup(Item item, int itemType, FuelType fuel=null, FuelTank tank=null, RocketConfiguration config=null)
+    public void Setup(Item item, int itemType, FuelType fuel = null, FuelTank tank = null, RocketConfiguration config = null)
     {
         this.currentItem = item;
         this.itemType = itemType;
 
-        
+
         switch (this.itemType)
         {
             case 0:
@@ -53,7 +56,7 @@ public class StoreItem : MonoBehaviour
                 break;
 
         }
-        
+
     }
 
     public void ShowDescription()
@@ -68,8 +71,12 @@ public class StoreItem : MonoBehaviour
         this.cost.enabled = true;
 
         List<string> stats = new List<string>(this.currentItem.stats.Keys);
+        for (int i = 0; i < ignoreStats.Count; i++)
+        {
+            stats.Remove(ignoreStats[i]);
+        }
 
-        for(int i = 0; i < stats.Count; i++)
+        for (int i = 0; i < stats.Count; i++)
         {
 
             TMP_Text statText = this.textHolders[i];
