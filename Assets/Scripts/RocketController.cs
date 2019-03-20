@@ -38,15 +38,15 @@ public class RocketController : MonoBehaviour
     void Start()
     {
         this.wallet = GameObject.Find("Wallet").GetComponent<Wallet>();
-        gravity = Math.Round(UnityEngine.Random.Range(2f + wallet.getRound(), 18f + wallet.getRound()),2);
+        gravity = Math.Round(UnityEngine.Random.Range(2f + 1.5f * wallet.getRound(), 18f + 1.5f * wallet.getRound()),2);
 
 
 
         renderer = this.GetComponent<SpriteRenderer>();
         updateStats = FindObjectOfType<UpdateStats>();
 
-        targetAltitude = Math.Round(UnityEngine.Random.Range(700+150f* wallet.getRound(), 2500f + 180f * wallet.getRound()),0); ; // in km
-        payLoad = Math.Round(UnityEngine.Random.Range(5f+ wallet.getRound(), 70f+2* wallet.getRound()),2); //In kg
+        targetAltitude = Math.Round(UnityEngine.Random.Range(500+200f* wallet.getRound(), 2000f + 250f * wallet.getRound()),0); ; // in km
+        payLoad = Math.Round(UnityEngine.Random.Range(5f+ 3* wallet.getRound(), 40f+4* wallet.getRound()),2); //In kg
         //Let's do this metric
 
         Debug.Log("rocket starting");
