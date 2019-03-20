@@ -8,6 +8,7 @@ public class LaunchScript : MonoBehaviour
     private RocketController rocket;
     public Button launchButton;
     public Wallet wallet;
+    public GameObject losePopup;
 
     public GameObject rocketStats, menu, itemInfo;
     // Start is called before the first frame update
@@ -17,6 +18,7 @@ public class LaunchScript : MonoBehaviour
         this.launchButton.interactable = false;
         //this.GetComponent<>
         this.wallet = GameObject.Find("Wallet").GetComponent<Wallet>();
+        //this.losePopup = GameObject.Find("LosePopup");
     }
 
     private void Update()
@@ -42,6 +44,11 @@ public class LaunchScript : MonoBehaviour
             this.wallet.setCash(remainingCash);
 
             this.gameObject.SetActive(false);
+        }
+        if (remainingCash < 0 && this.wallet.getCash() < 2300)
+        {
+            //losePopup.SetActive(true);
+            Debug.Log("You lose 1");
         }
 
     }

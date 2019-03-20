@@ -28,6 +28,8 @@ public class UpdateStats : MonoBehaviour
     public int cashReward;
 
     public GameObject helpPopup;
+
+    public GameObject LosePopup;
    
 
     // Use this for initialization
@@ -67,13 +69,24 @@ public class UpdateStats : MonoBehaviour
         {
             helpPopup.SetActive(false);
         }
+        Debug.Log("Cash: " + wallet.getCash());
+        if (wallet.getCash() > 2300)
+        {
+            
+            LosePopup.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("You lose 2");
+            LosePopup.SetActive(true);
+        }
     }
 
 
     void setMissionDescription()
     {
         string agency;
-        switch ((int)UnityEngine.Random.Range(0,4))
+        switch ((int)UnityEngine.Random.Range(0,5))
         {
             case 0:
                 agency = "The ESA";
