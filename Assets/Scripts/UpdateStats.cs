@@ -27,6 +27,7 @@ public class UpdateStats : MonoBehaviour
 
     public int cashReward;
 
+    public GameObject helpPopup;
    
 
     // Use this for initialization
@@ -61,6 +62,11 @@ public class UpdateStats : MonoBehaviour
         setMissionDescription();
         wallet.incrementRound();
         Debug.Log("Round: " + wallet.getRound());
+
+        if(wallet.getRound()>1)
+        {
+            helpPopup.SetActive(false);
+        }
     }
 
 
@@ -88,7 +94,7 @@ public class UpdateStats : MonoBehaviour
                 agency = "No one";
                 break;
         }
-        cashReward = 1000 + (int)(this.rocket.getPayload() * this.rocket.getGravity() * this.rocket.getTargetAltitude() / 400);
+        cashReward = 1500 + (int)(this.rocket.getPayload() * this.rocket.getGravity() * this.rocket.getTargetAltitude() / 420);
         missionText.text = agency + " wants you to build them a rocket that can carry " + this.rocket.getPayload() + 
         " kg into space. On this planet, the gravitational acceleration is "+ this.rocket.getGravity()+"m/s/s, and they need you to reach " +
            this.rocket.getTargetAltitude() + " meters. For this you will get "+ cashReward + " dollars. If you fail, you must cover the rocket and crew training expenses yourself. (Astronauts are expensive.) Good luck.";
