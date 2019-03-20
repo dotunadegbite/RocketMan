@@ -108,9 +108,8 @@ public class UpdateStats : MonoBehaviour
                 break;
         }
         cashReward = 1500 + (int)(this.rocket.getPayload() * this.rocket.getGravity() * this.rocket.getTargetAltitude() / 420);
-        missionText.text = agency + " wants you to build them a rocket that can carry " + this.rocket.getPayload() + 
-        " kg into space. On this planet, the gravitational acceleration is "+ this.rocket.getGravity()+"m/s/s, and they need you to reach " +
-           this.rocket.getTargetAltitude() + " meters. For this you will get "+ cashReward + " dollars. If you fail, you must cover the rocket and crew training expenses yourself. (Astronauts are expensive.) Good luck.";
+        missionText.text = agency + " wants you to build them a rocket  and launch it. For this you will get "+ cashReward + " dollars. If you fail, you must cover the rocket and crew training expenses yourself. \n\nGravitational acceleration: " + this.rocket.getGravity()+"m/s/s \nTarget altitude: " +
+           this.rocket.getTargetAltitude() + " meters \nPayload: " + this.rocket.getPayload() + " kg";
 
 
 

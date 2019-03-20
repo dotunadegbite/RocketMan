@@ -7264,7 +7264,7 @@ MonoBehaviour:
   missionText: {fileID: 1446496733}
   cashReward: 0
   helpPopup: {fileID: 104765917}
-  LosePopup: {fileID: 1175776183}
+  losePopup: {fileID: 1175776183}
 --- !u!1 &1913594755
 GameObject:
   m_ObjectHideFlags: 0
