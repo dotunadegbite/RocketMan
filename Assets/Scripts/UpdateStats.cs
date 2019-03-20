@@ -29,7 +29,7 @@ public class UpdateStats : MonoBehaviour
 
     public GameObject helpPopup;
 
-    public GameObject LosePopup;
+    public GameObject losePopup;
    
 
     // Use this for initialization
@@ -73,12 +73,12 @@ public class UpdateStats : MonoBehaviour
         if (wallet.getCash() > 2300)
         {
             
-            LosePopup.SetActive(false);
+            losePopup.SetActive(false);
         }
         else
         {
             Debug.Log("You lose 2");
-            LosePopup.SetActive(true);
+            losePopup.SetActive(true);
         }
     }
 

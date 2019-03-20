@@ -171,7 +171,7 @@ public class RocketController : MonoBehaviour
     double getAirResistanceAcceleration(double velocity)
     {
 
-        return (velocity > 0 ? -1 : +1) * 0.001*velocity*velocity; // TODO
+        return (velocity > 0 ? -1 : +1) * 0.01*velocity*velocity/(altitude+5); // TODO
     }
 
     public void updateComponent(Item item)
