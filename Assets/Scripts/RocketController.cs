@@ -27,6 +27,7 @@ public class RocketController : MonoBehaviour
 
     public TMP_Text completionText;
 
+    public Wallet wallet;
     //public CompletionPopupScript completionPopupScript;
 
     FuelType currentFuelType;
@@ -36,15 +37,16 @@ public class RocketController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gravity = Math.Round(UnityEngine.Random.Range(4f, 20f),2);
+        this.wallet = GameObject.Find("Wallet").GetComponent<Wallet>();
+        gravity = Math.Round(UnityEngine.Random.Range(2f + wallet.getRound(), 18f + wallet.getRound()),2);
 
 
 
         renderer = this.GetComponent<SpriteRenderer>();
         updateStats = FindObjectOfType<UpdateStats>();
 
-        targetAltitude = Math.Round(UnityEngine.Random.Range(1000f, 5000f),0); ; // in km
-        payLoad = Math.Round(UnityEngine.Random.Range(1f,70f),2); //In kg
+        targetAltitude = Math.Round(UnityEngine.Random.Range(700+150f* wallet.getRound(), 2500f + 180f * wallet.getRound()),0); ; // in km
+        payLoad = Math.Round(UnityEngine.Random.Range(5f+ wallet.getRound(), 70f+2* wallet.getRound()),2); //In kg
         //Let's do this metric
 
         Debug.Log("rocket starting");
@@ -73,7 +75,7 @@ public class RocketController : MonoBehaviour
         if (currentRocketConfiguration != null)
         {
             renderer.enabled = true;
-            Debug.Log(currentRocketConfiguration.numStages);
+            //Debug.Log(currentRocketConfiguration.numStages);
             switch (currentRocketConfiguration.numStages)
             {
                 case 1:

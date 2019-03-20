@@ -59,6 +59,8 @@ public class UpdateStats : MonoBehaviour
         this.item3 = this.itemIcon3.GetComponent<StoreItem>(); 
         hasWon = false;
         setMissionDescription();
+        wallet.incrementRound();
+        Debug.Log("Round: " + wallet.getRound());
     }
 
 

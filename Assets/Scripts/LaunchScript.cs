@@ -23,7 +23,7 @@ public class LaunchScript : MonoBehaviour
     {
         if (this.CheckRocketParts())
         {
-            Debug.Log("Does this work");
+            //Debug.Log("Does this work");
             this.launchButton.interactable = true;
         }
             
