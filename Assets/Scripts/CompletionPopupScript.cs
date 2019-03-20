@@ -30,11 +30,11 @@ public class CompletionPopupScript : MonoBehaviour
     {
         if(updateStats.hasWon)
         {
-            wallet.updateCash(5000); //This is your payment for completing the mission.
+            wallet.updateCash(updateStats.cashReward); //This is your payment for completing the mission.
         }
         else
         {
-            wallet.updateCash(-3000); //This is where you pay for your rocket
+            wallet.updateCash(-2000); //This is where you pay extra for your crew
         }
         SceneManager.LoadScene("game");
     }

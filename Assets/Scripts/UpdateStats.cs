@@ -25,6 +25,8 @@ public class UpdateStats : MonoBehaviour
 
     public TMP_Text missionText;
 
+    public int cashReward;
+
    
 
     // Use this for initialization
@@ -84,9 +86,11 @@ public class UpdateStats : MonoBehaviour
                 agency = "No one";
                 break;
         }
+        cashReward = 1000 + (int)(this.rocket.getPayload() * this.rocket.getGravity() * this.rocket.getTargetAltitude() / 400);
         missionText.text = agency + " wants you to build them a rocket that can carry " + this.rocket.getPayload() + 
         " kg into space. On this planet, the gravitational acceleration is "+ this.rocket.getGravity()+"m/s/s, and they need you to reach " +
-           this.rocket.getTargetAltitude() + " meters. For this you will get money. If you fail, you must cover the rocket expenses yourself. Good luck.";
+           this.rocket.getTargetAltitude() + " meters. For this you will get "+ cashReward + " dollars. If you fail, you must cover the rocket and crew training expenses yourself. (Astronauts are expensive.) Good luck.";
+
 
 
     }
