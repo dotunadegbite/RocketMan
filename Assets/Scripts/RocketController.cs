@@ -118,7 +118,7 @@ public class RocketController : MonoBehaviour
 
     void hasWon()
     {
-        completionText.text = "Yay!";
+        completionText.text = "Congratulations, you made it! You will be awarded with "+ updateStats.cashReward + " dollars for your fine work.";
         updateStats.hasWon = true;
         flying = false;
         completionPanel.gameObject.SetActive(true);
@@ -126,7 +126,7 @@ public class RocketController : MonoBehaviour
 
     void hasLost()
     {
-        completionText.text = "No!";
+        completionText.text = "Oh no! This didn't go all too well. To compensate the astronaut's families and cover the cost of training new ones, you will have to pay 2000 dollars.";
         flying = false;
         completionPanel.gameObject.SetActive(true);
     }
