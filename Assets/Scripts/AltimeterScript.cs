@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,13 +19,29 @@ public class AltimeterScript : MonoBehaviour
 
     private void OnGUI()
     {
+        float topFillEdge = (float)(200 * (rocket.getTargetAltitude() - rocket.getAltitude()) / rocket.getTargetAltitude());
 
-        GUI.BeginGroup(new Rect(xCoord, yCoord, 300, 300));
+        float boxHeight = 250;
+
+        GUIStyle style = new GUIStyle();
+
+        style = GUIStyle.none;
+
+        //style.fixedWidth = 30;
+        style.stretchWidth = true;
+
+
+
+        GUI.BeginGroup(new Rect(xCoord, yCoord, 250, boxHeight));
+        GUI.Label(new Rect(20, 0, 200, 20), "Target Altitude: "+ rocket.getTargetAltitude() + " m");
+        GUI.Label(new Rect(20, topFillEdge+10, 200, 20), "Current Altitude: " + Math.Round(rocket.getAltitude(),2)+" m");
 
         // Draw a box in the new coordinate space defined by the BeginGroup.
         // Notice how (0,0) has now been moved on-screen
-        GUI.Box(new Rect(250, 0, 50, 300), backgroundTexture);
-        GUI.Box(new Rect(250, (float)(300 * (targetAltitude - currentAltitude) / targetAltitude), 50, 300- (float)(300 * (targetAltitude - currentAltitude) / targetAltitude)), fillTexture);
+        GUI.backgroundColor = Color.black;
+        GUI.Box(new Rect(0, 10, 15, 200), backgroundTexture, style);
+        GUI.backgroundColor = Color.green;
+        GUI.Box(new Rect(0, topFillEdge+10, 15, 200- topFillEdge), fillTexture, style);
 
 
 
@@ -36,5 +53,6 @@ public class AltimeterScript : MonoBehaviour
     void Update()
     {
         currentAltitude = rocket.getAltitude();
+        //Debug.Log("Target Altitude: " + rocket.getTargetAltitude());
     }
 }
