@@ -43,7 +43,7 @@ public class Wallet : MonoBehaviour
         {
             DontDestroyOnLoad(this.gameObject);
             created = true;
-            this.setCash(10000);
+            this.setCash(4000);
             round = 0; //Iterated on immediately, making rounds 1 indexed
         }
         else

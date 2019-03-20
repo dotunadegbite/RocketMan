@@ -38,7 +38,7 @@ public class RocketController : MonoBehaviour
     void Start()
     {
         this.wallet = GameObject.Find("Wallet").GetComponent<Wallet>();
-        gravity = Math.Round(UnityEngine.Random.Range(2f + 1.5f * wallet.getRound(), 18f + 1.5f * wallet.getRound()),2);
+        gravity = Math.Round(UnityEngine.Random.Range(4f + 1.5f * wallet.getRound(), 18f + 1.5f * wallet.getRound()),2);
 
 
 
